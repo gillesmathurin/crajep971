@@ -41,8 +41,8 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: crajep_production
+  database: crajept_production
   pool: 5
-  username: root
-  password: 
+  username: gillesm
+  password: 6q!8NcK{!ejR
   socket: /tmp/mysql.sock
