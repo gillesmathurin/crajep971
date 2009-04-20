@@ -96,3 +96,43 @@ Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-04-17 15:40:1
   [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
   [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
 Completed in 79ms (View: 16, DB: 2) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (28.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-20 14:48:02) [GET]
+
+ActionController::RoutingError (No route matches "/images/arborescence.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-20 14:48:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/arborescence.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-20 14:49:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/arborescence.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-20 14:59:47) [GET]
+
+ActionController::RoutingError (No route matches "/images/arborescence.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
