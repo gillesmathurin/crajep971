@@ -107,3 +107,153 @@ Migrating to AddEmailToMembres (20090421151241)
   [4;35;1mSQL (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
   [4;36;1mSQL (6.2ms)[0m   [0;1mdescribe `users`[0m
   [4;35;1mSQL (3.3ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-21 11:22:17) [GET]
+
+ActionController::RoutingError (No route matches "/mockups" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MockupsController#frameset (for 127.0.0.1 at 2009-04-21 11:22:54) [GET]
+Rendering mockups/frameset
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/mockups]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MockupsController#index (for 127.0.0.1 at 2009-04-21 11:22:54) [GET]
+Rendering mockups/index
+Completed in 26ms (View: 19, DB: 0) | 200 OK [http://localhost/mockups_index]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MockupsController#show (for 127.0.0.1 at 2009-04-21 11:22:58) [GET]
+  Parameters: {"parent_dir"=>"sample_section", "template_name"=>"sample_nested"}
+Rendering mockups/sample_section/sample_nested
+Completed in 23ms (View: 17, DB: 1) | 200 OK [http://localhost/mockup/sample_nested?parent_dir=sample_section]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MockupsController#show (for 127.0.0.1 at 2009-04-21 11:23:08) [GET]
+  Parameters: {"template_name"=>"alternate_layout"}
+
+ActionView::MissingTemplate (Missing layout layouts/alternate.erb in view path app/views:vendor/plugins/showoff/app/views):
+  vendor/plugins/showoff/app/controllers/mockups_controller.rb:27:in `show'
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MockupsController#show (for 127.0.0.1 at 2009-04-21 11:23:12) [GET]
+  Parameters: {"template_name"=>"sample_mockup"}
+Rendering mockups/sample_mockup
+Completed in 25ms (View: 19, DB: 1) | 200 OK [http://localhost/mockup/sample_mockup]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MockupsController#show (for 127.0.0.1 at 2009-04-21 11:24:44) [GET]
+  Parameters: {"parent_dir"=>"sample_section", "template_name"=>"sample_nested"}
+Rendering mockups/sample_section/sample_nested
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://localhost/mockup/sample_nested?parent_dir=sample_section]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MockupsController#show (for 127.0.0.1 at 2009-04-21 11:34:08) [GET]
+  Parameters: {"template_name"=>"alternate_layout"}
+
+ActionView::MissingTemplate (Missing layout layouts/alternate.erb in view path app/views:vendor/plugins/showoff/app/views):
+  vendor/plugins/showoff/app/controllers/mockups_controller.rb:27:in `show'
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MockupsController#show (for 127.0.0.1 at 2009-04-21 11:34:23) [GET]
+  Parameters: {"parent_dir"=>"sample_section", "template_name"=>"sample_nested"}
+Rendering mockups/sample_section/sample_nested
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/mockup/sample_nested?parent_dir=sample_section]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MockupsController#show (for 127.0.0.1 at 2009-04-21 11:34:30) [GET]
+  Parameters: {"template_name"=>"sample_mockup"}
+Rendering mockups/sample_mockup
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/mockup/sample_mockup]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `crajep_test`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE DATABASE `crajep_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (70.8ms)[0m   [0mCREATE TABLE `actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nom` varchar(255), `description` text, `nom_lien` varchar(255), `lien` varchar(255), `categorie_action_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (205.0ms)[0m   [0mCREATE TABLE `articles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `titre` varchar(255), `body` text, `user_id` int(11), `evenement_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (96.5ms)[0m   [0mCREATE TABLE `categorie_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nom` varchar(255), `theme` text, `permalink` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (93.0ms)[0m   [0mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `body` text, `article_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (83.4ms)[0m   [0mCREATE TABLE `cpte_rendus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `titre` varchar(255), `published_at` datetime, `body` text, `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.8ms)[0m   [0mCREATE TABLE `evenements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `titre` varchar(255), `date` date, `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (84.1ms)[0m   [0mCREATE TABLE `liens` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nom` varchar(255), `adresse` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (84.5ms)[0m   [0mCREATE TABLE `membres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nom` varchar(255), `description` text, `adresse` varchar(255), `cp` varchar(255), `ville` varchar(255), `tel` varchar(255), `fax` varchar(255), `weburl` varchar(255), `created_at` datetime, `updated_at` datetime, `email` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (104.8ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(40), `name` varchar(100) DEFAULT '', `email` varchar(100), `crypted_password` varchar(40), `salt` varchar(40), `created_at` datetime, `updated_at` datetime, `remember_token` varchar(40), `remember_token_expires_at` datetime, `activation_code` varchar(40), `activated_at` datetime, `state` varchar(255) DEFAULT 'passive', `deleted_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (120.1ms)[0m   [0;1mCREATE UNIQUE INDEX `index_users_on_login` ON `users` (`login`)[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (184.2ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (119.8ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090421151241')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090421144519')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090421145104')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090421145247')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090421145936')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090421150038')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090421150220')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090421150308')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20090421150903')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20090421151112')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#show (for 127.0.0.1 at 2009-04-21 13:00:37) [GET]
+
+ActionController::UnknownAction (No action responded to show. Actions: create, destroy, and new):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#show (for 127.0.0.1 at 2009-04-21 17:30:43) [GET]
+
+ActionController::UnknownAction (No action responded to show. Actions: create, destroy, and new):
+  
+
+Rendering rescues/layout (not_found)
