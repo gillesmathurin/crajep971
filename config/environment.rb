@@ -16,6 +16,7 @@ Rails::Initializer.run do |config|
   config.gem 'rspec-rails', :lib => false, :version => '>=1.2.4'
   config.gem 'rspec', :lib => false, :version => '>=1.2.4'
   config.gem 'rubyist-aasm', :lib => 'aasm', :version => '>=2.0.5'
+  config.gem 'faker', :lib => false
   
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers

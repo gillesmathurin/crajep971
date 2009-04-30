@@ -10,6 +10,16 @@
 </head>
 
 <body>
-  <%= yield %>
+  <p><a href="index.html">Retour</a></p>
+  
+  <h1>Maquette n°1</h1>
+  
+  <p>
+    <%= image_tag("Maquette-accueil.jpg") %>
+  </p>
+  <p>
+    <%= Faker::Lorem.paragraph(10) %>
+  </p>
+
 </body>
 </html>
