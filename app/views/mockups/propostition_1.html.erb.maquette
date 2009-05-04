@@ -1,0 +1,68 @@
+<div id="doc4" class="yui-t1">
+  <div id="hd">
+      <div id="hd-img">
+          <div id="logo">
+            <%= image_tag("logo.png") %>
+          </div>
+          <div id="titre">
+            <%= image_tag("titre.png") %>
+          </div>
+      </div>
+      <div id="menu">
+          <ul>
+              <li>ACCUEIL</li>
+              <li>ACTUALITES</li>
+              <li>ACTIONS</li>
+              <li>AGENDA</li>
+              <li>RESEAU</li>
+              <li>CONTACTS</li>
+              <li>LIENS</li>
+          </ul>
+      </div>
+  </div>
+  
+  <div id="bd">
+      <!-- Colonne principale -->
+      <div id="yui-main">   
+          <div class="yui-b">
+              
+                <div class="yui-g">
+                    <h1>Faire vivre l'Education Populaire une mission du CRAJEP Guadeloupe</h1>
+                    <!-- TODO : Ajouter les photos -->
+                    <p>Place des photos</p>                
+                </div>
+                
+                <div class="yui-g">
+                    <p>Emplacement du texte d'annonce</p>
+                </div>
+                
+                <div class="yui-g">
+                    <!-- Section qui somme nous -->
+                    <p>
+                        Emplacement du "Qui sommes nous ?"<br/>
+                        <%= Faker::Lorem.paragraph(10) %>
+                    </p>
+                    
+                    <p>
+                        Emplacement du "Coordonnées"<br/>
+                        <%= Faker::Lorem.paragraph(10) %>
+                    </p>
+                </div>
+          
+          </div>
+      </div>
+    
+    <!-- Colonne de droite -->
+    <div class="yui-b">
+      <p>
+        <%= Faker::Lorem.paragraphs(5) %>
+      </p>
+    </div>
+
+  </div>
+  
+  <div id="ft">
+    <%= Faker::Lorem.sentence(5) %>
+  </div>
+ 
+</div>

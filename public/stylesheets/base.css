@@ -1,0 +1,55 @@
+div#hd {
+	height: 120px;
+	background-color: transparent;
+}
+
+#hd #hd-img {
+	position: relative;
+	display: block;
+	height: 112px;
+}
+
+#hd #logo {
+	float: left;
+	display: block;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+
+#hd #titre {
+	position: absolute;
+	left: 170px;
+	top: 30px;
+}
+
+#hd #menu {
+	width: 972px;
+	background-color: white;
+	position: relative;
+	display: block;
+	text-align: center;
+	border: 1px solid silver;
+	line-height: 1.7;
+	top: -15px;
+}
+
+#hd #menu ul li {
+	display: inline;
+	text-align: center;
+	margin-right: 10px;
+	border-right: 1px solid silver;
+	padding-right: 10px;
+}
+
+div#bd {
+	background-color: white;
+	border: 1px solid silver;
+	padding: 10px;
+}
+
+div#ft {
+	background-color: #027abb;
+	color: white;
+	text-align: center;
+}
