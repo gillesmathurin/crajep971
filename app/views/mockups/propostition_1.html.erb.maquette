@@ -10,13 +10,13 @@
       </div>
       <div id="menu">
           <ul>
-              <li>ACCUEIL</li>
-              <li>ACTUALITES</li>
-              <li>ACTIONS</li>
-              <li>AGENDA</li>
-              <li>RESEAU</li>
-              <li>CONTACTS</li>
-              <li>LIENS</li>
+              <li><%= link_to "ACCUEIL", "" %> </li>
+              <li><%= link_to "ACTUALITES", "" %></li>
+              <li><%= link_to "ACTIONS", "" %></li>
+              <li><%= link_to "AGENDA", "" %></li>
+              <li><%= link_to "RESEAU", "" %></li>
+              <li><%= link_to "CONTACTS", "" %></li>
+              <li><%= link_to "LIENS", "" %></li>
           </ul>
       </div>
   </div>
@@ -27,24 +27,37 @@
           <div class="yui-b">
               
                 <div class="yui-g">
-                    <h1>Faire vivre l'Education Populaire une mission du CRAJEP Guadeloupe</h1>
-                    <!-- TODO : Ajouter les photos -->
-                    <p>Place des photos</p>                
+                    <h1 class="accroche">
+                        Faire vivre l'EDUCATION POPULAIRE une mission du CRAJEP Guadeloupe
+                    </h1>             
+                </div>
+                
+                <div class="yui-gb">
+                    <div class="yui-u first">
+                        <p class="image"><%= image_tag("samples/education2.tiff") %></p>
+                    </div>
+                    <div class="yui-u">
+                        <p class="image"><%= image_tag("samples/education.tiff") %></p>
+                    </div>
+                    
+                    <div class="yui-u">
+                        <p class="image"><%= image_tag("samples/education3.tiff") %></p>
+                    </div>
                 </div>
                 
                 <div class="yui-g">
-                    <p>Emplacement du texte d'annonce</p>
+                    <p class="annonce">Emplacement du texte d'annonce</p>
                 </div>
                 
                 <div class="yui-g">
                     <!-- Section qui somme nous -->
+                    <h3 class="red">Qui sommes nous ?</h3>
                     <p>
-                        Emplacement du "Qui sommes nous ?"<br/>
                         <%= Faker::Lorem.paragraph(10) %>
                     </p>
                     
+                    <h3 class="green">Nos coordonnées</h3>
                     <p>
-                        Emplacement du "Coordonnées"<br/>
                         <%= Faker::Lorem.paragraph(10) %>
                     </p>
                 </div>

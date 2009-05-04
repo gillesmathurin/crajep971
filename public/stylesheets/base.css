@@ -1,3 +1,9 @@
+body {
+	color: gray;
+}
+
+/* @group Header */
+
 div#hd {
 	height: 120px;
 	background-color: transparent;
@@ -40,13 +46,86 @@ div#hd {
 	margin-right: 10px;
 	border-right: 1px solid silver;
 	padding-right: 10px;
+	font-weight: bold;
+	font-size: 0.9em;
 }
+
+#hd #menu ul li a:hover {
+	color: #be2956;
+	border-bottom: 2px solid #ec366d;
+}
+
+#hd #menu ul li a {
+	text-decoration: none;
+	color: gray;
+}
+
+
+
+/* @end */
+
+/* @group Body */
 
 div#bd {
 	background-color: white;
 	border: 1px solid silver;
 	padding: 10px;
 }
+
+h1.accroche {
+	color: #0083c9;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+p.image {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+p.image img {
+	border: 2px solid yellow;
+}
+
+p.annonce {
+	height: 50px;
+	display: block;
+	background-color: #cedfff;
+	text-align: center;
+	line-height: 45px;
+	font-weight: bold;
+	color: black;
+}
+
+div.yui-g {
+	margin-bottom: 10px;
+}
+
+h3 {
+	display: block;
+	width: 20%;
+	text-align: left;
+	color: white;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: bold;
+	text-indent: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+h3.red {
+	background-color: #e41b5b;
+}
+
+h3.green {
+	background-color: #01ad4e;
+}
+
+
+
+/* @end */
 
 div#ft {
 	background-color: #027abb;
