@@ -155,15 +155,14 @@ body {
 	float: left;
 	width: 12.30769em;
 	*width: 12.00em;
-	border-right: 1px solid silver;
 	padding-right: 1em;
 }
 
 .yui-t1 #yui-main .yui-b {
 	margin-left: 13.30769em;
 	*margin-left: 13.05em;
-	border-right-style: none;
 	padding-left: 1em;
+	border-left: 1px solid silver;
 }
 
 .yui-t2 .yui-b {

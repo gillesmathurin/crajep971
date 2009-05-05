@@ -66,10 +66,33 @@
       </div>
     
     <!-- Colonne de droite -->
-    <div class="yui-b">
-      <p>
-        <%= Faker::Lorem.paragraphs(5) %>
-      </p>
+    <div class="yui-b sidebar">
+        <p class="login">
+            Accès réservé
+        </p>
+        <%- form_tag session_path do -%>
+            <label>Identifiant :</label><br/>
+            <%= text_field_tag 'login', '', :size => 14 %><br/>
+            <label>Mot de passe :</label><br/>
+            <%= password_field_tag 'password', '', :size => 14 %><br/>
+            <%= submit_tag 'Connexion' %>
+        <%- end -%>
+        
+        <p>
+            Newsletter
+        </p>
+        <%- form_tag '' do -%>
+            <label>Votre email :</label><br/>
+            <%= text_field_tag 'email', "", :size => 14 %><br/>
+            <%= submit_tag "S'inscrire" %><br/>
+            <%= link_to "Désinscription", "", :class => "unsubscribe" %><br/><br/>
+        <%- end -%>
+        
+        <ul>
+            <li>Partenaire 1</li>
+            <li>Partenaire 2</li>
+            <li>Partenaire 3</li>
+        </ul>
     </div>
 
   </div>
