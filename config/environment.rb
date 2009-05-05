@@ -1,9 +1,5 @@
 # Be sure to restart your server when you modify this file
 
-# Uncomment below to force Rails into production mode when
-# you don't control web/app server and can't set it the proper way
-# ENV['RAILS_ENV'] ||= 'production'
-
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 
@@ -15,9 +11,6 @@ Rails::Initializer.run do |config|
   config.gem 'cucumber', :lib => false, :version => '>=0.3.0'
   config.gem 'rspec-rails', :lib => false, :version => '>=1.2.4'
   config.gem 'rspec', :lib => false, :version => '>=1.2.4'
-  config.gem 'rubyist-aasm', :lib => 'aasm', :version => '>=2.0.5'
-  config.gem 'faker', :lib => false
-  
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
@@ -41,7 +34,6 @@ Rails::Initializer.run do |config|
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
-  config.active_record.observers = :user_observer
 
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
   # Run "rake -D time" for a list of tasks for finding time zone names.
