@@ -19,6 +19,6 @@ class ActionsController < ApplicationController
   protected
   
   def find_categorie_actions
-    @categorie_action = CategorieAction.find(:params[:categorie_action_id]) if params[:categorie_action_id]
+    @categorie_action = CategorieAction.find(params[:categorie_action_id]) if params[:categorie_action_id]
   end
 end

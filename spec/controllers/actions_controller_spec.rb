@@ -17,15 +17,26 @@ describe ActionsController do
   
   describe "GET 'index'" do
     
-    before(:each) do
-      @mock_category = mock_model(CategorieAction)
-      CategorieAction.should_receive(:find).with("1").and_return(@mock_category)
+    describe "with a given categorie_action instance" do
+      before(:each) do
+        @mock_category = mock_model(CategorieAction)
+        CategorieAction.should_receive(:find).with("1").and_return(@mock_category)
+      end
+
+      it "should exposes all the actions for a given categorie" do
+        @mock_category.should_receive(:actions).and_return([mock_action])
+        get :index, :categorie_action_id => "1"
+        assigns[:actions].should == [mock_action]
+      end
     end
     
-    it "should exposes all the actions for a given categorie" do
-      @mock_category.should_receive(:actions).and_return([mock_action])
-      get :index
-      assigns[:actions].should ==[mock_action]
+    describe "without a given categorie_action instance" do
+      
+      it "should expose all the actions" do
+        Action.should_receive(:all).and_return([mock_action])
+        get :index
+        assigns[:actions].should == [mock_action]
+      end
     end
   end
 end
