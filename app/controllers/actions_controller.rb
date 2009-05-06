@@ -42,7 +42,7 @@ class ActionsController < ApplicationController
     respond_to do |format|
       if @action.save
         flash[:notice] = "Action correctement enregistrée."
-        format.html { redirect_to categorie_action_actions_url(@action.categorie) }
+        format.html { redirect_to categorie_action_actions_url(@action.categorie_action_id) }
       else
         format.html { render :action => 'new' }
       end
@@ -55,7 +55,7 @@ class ActionsController < ApplicationController
     respond_to do |format|
       if @action.update_attributes(params[:uneaction])
         flash[:notice] = "Mise à jour réussie"
-        format.html { redirect_to action_url(@action) }
+        format.html { redirect_to categorie_action_action_url(@action.categorie_action_id, @action) }
       else
         format.html { render :action => "edit" }
       end

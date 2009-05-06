@@ -1,0 +1,29 @@
+<div id="yui-main">
+    <div class="yui-g">
+        <h1 class="accroche">Modification d'une Action</h1>
+    </div>
+
+    <div class="yui-gc">
+        <div class="yui-u first">
+            <% form_for :uneaction, @action, :url => action_path(@action), :html => {:method => :put} do |f| %>
+                <%= render :partial => 'form', :locals => { :f => f } %>
+            <% end -%>
+            <p>
+                 <% if @categorie_action %>
+                     <%= link_to "Retour", categorie_action_path(@categorie_action) %>
+                 <% else %>
+                     <%= link_to "Retour", actions_path() %>
+                 <% end %>
+            </p>
+        </div>
+        
+        <div class="yui-u">
+            <%= render :partial => "shared/edition" %>    
+        </div>
+    </div>
+
+</div>
+
+<div class="yui-b sidebar">
+    
+</div>

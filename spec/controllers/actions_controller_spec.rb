@@ -90,23 +90,24 @@ describe ActionsController do
   describe "POST 'create'" do
     
     describe "with a successful save" do
+      
       before(:each) do
         @mock_categorie = mock_model(CategorieAction)
       end
       
       it "should expose a newly created action as @action" do
         Action.should_receive(:new).with({'these' => 'params'}).and_return(mock_action(:save => true))
-        mock_action.should_receive(:categorie)
+        mock_action.should_receive(:categorie_action_id)
         post 'create', :uneaction => {:these => 'params'}
         assigns(:action).should == mock_action
       end
       
       it "redirects to the actions index page for this categorie of action" do
         Action.should_receive(:new).with({'these' => 'params'}).and_return(mock_action(:save => true))
-        mock_action.should_receive(:categorie).and_return(@mock_categorie)
+        mock_action.should_receive(:categorie_action_id).and_return(@mock_categorie.id)
         post 'create', :uneaction => {:these => 'params'}
         assigns(:action).should == mock_action
-        response.should redirect_to(categorie_action_actions_url(@mock_categorie))
+        response.should redirect_to(categorie_action_actions_url(@mock_categorie.id))
       end
     end
     
@@ -124,6 +125,10 @@ describe ActionsController do
     
     describe "with a valid params" do
       
+      before(:each) do
+        @mock_categorie = mock_model(CategorieAction)
+      end
+      
       it "should update the requested action" do
         Action.should_receive(:find).with("37").and_return(mock_action)
         mock_action.should_receive(:update_attributes).with({'these' => 'params'})
@@ -132,13 +137,15 @@ describe ActionsController do
       
       it "should expose the requested action as @action" do
         Action.should_receive(:find).and_return(mock_action(:update_attributes => true))
+        mock_action.should_receive(:categorie_action_id).and_return(@mock_categorie.id)
         put :update, :id => "1"
       end
       
       it "should redirect to the action" do
         Action.should_receive(:find).and_return(mock_action(:update_attributes => true))
+        mock_action.should_receive(:categorie_action_id).and_return(@mock_categorie.id)
         put :update, :id => "1"
-        response.should redirect_to(action_url(mock_action))
+        response.should redirect_to(categorie_action_action_url(@mock_categorie.id, mock_action))
       end
     end
     

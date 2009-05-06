@@ -1,0 +1,38 @@
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-gc">
+            
+            <div class="yui-u first">
+                <h1 class="accroche">
+                    <%= @action.nom %>
+                </h1>
+
+                <p>
+                    <%= format_text(@action.description) %>
+                </p>
+                
+                <% if @categorie_action %>
+                    <%= link_to "Retour", categorie_action_path(@categorie_action) %>
+                <% else %>
+                    <%= link_to "Retour", actions_path() %>
+                <% end %>
+                
+                <% if admin? %>
+                <p>
+                    <%= link_to "Modifier", edit_action_path(@action) %> | <%= link_to "Supprimer", action_path(@action), :method => :delete, :confirm => "En êtes vous sur ?" %>
+                </p>
+                <% end %>
+            </div>
+            
+            <div class="yui-u">
+                <h3 class="red">Autres actions récentes</h3>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+</div>

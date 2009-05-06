@@ -1,10 +1,21 @@
-<p class="login">
-    Accès réservé
-</p>
-<%- form_tag session_path do -%>
-    <label>Identifiant :</label><br/>
-    <%= text_field_tag 'login', '', :size => 14 %><br/>
-    <label>Mot de passe :</label><br/>
-    <%= password_field_tag 'password', '', :size => 14 %><br/>
-    <%= submit_tag 'Connexion' %>
-<%- end -%>
+<% unless logged_in? %>
+
+    <p class="login">
+        Accès réservé
+    </p>
+    <%- form_tag session_path do -%>
+        <label>Identifiant :</label><br/>
+        <%= text_field_tag 'login', '', :size => 14 %><br/>
+        <label>Mot de passe :</label><br/>
+        <%= password_field_tag 'password', '', :size => 14 %><br/>
+        <%= submit_tag 'Connexion' %>
+    <%- end -%>
+
+<% else %>
+    
+    <p class="login">Bienvenue <%= current_user.login %></p>
+    <p>
+        <%= link_to "Deconnexion", logout_path() %>
+    </p>
+    
+<% end %>

@@ -1,0 +1,33 @@
+<div id="yui-main">
+    <div class="yui-b">
+        
+        <div class="yui-g">
+            <h1 class="accroche">Liste des Actions</h1>
+        </div>
+        
+        <% if !@actions.blank? %>
+          <% for action in @actions %>
+            <div class="yui-g">
+                <h3 class="<%= cycle('green', 'red') %>"><%= action.nom %></h3>
+                <p>
+                    <%= format_text(action.description) if action.description%>
+                </p>
+                <p>
+                    <% if admin? %>
+                    <%= link_to "Modifier", action_path(action) %> | <%= link_to "Supprimer", action_path(action), :method => :delete, :confirm => "En êtes vous sur ?" %>
+                    <% end %>
+                </p>
+            </div>
+          <% end %>
+        <% else %>
+          <p>Pas d'actions enregistrées</p>
+        <% end %>
+        
+        
+    </div>
+    
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+</div>

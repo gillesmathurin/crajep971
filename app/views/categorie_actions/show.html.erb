@@ -9,6 +9,10 @@
                 <p>
                     <%= format_text(@categorie.theme) %>
                 </p>
+                
+                <p>
+                    <%= link_to "Retour", categorie_actions_path() %>
+                </p>
             </div>
             <div class="yui-u">
                 <h3 class="red">Les actions menées</h3>
@@ -17,7 +21,8 @@
                      <% for action in @categorie.actions %>
                         <li>
                             <%= action.nom %>, le : <%= action.created_at.strftime("%d/%m/%Y") %><br/>
-                            <%= truncate(action.description, :length => 80) %><br/> <%= link_to "Voir détails", action_path(action) %>
+                            <%= truncate(action.description, :length => 80) %><br/>
+                            <%= link_to "Voir détails", categorie_action_action_path(@categorie, action) %>
                         </li>
                       <% end %>
                 </ul>
