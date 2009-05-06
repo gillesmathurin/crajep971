@@ -26,6 +26,10 @@ class ActionsController < ApplicationController
     end
   end
   
+  def new
+    @action = Action.new
+  end
+  
   protected
   
   def find_categorie_actions

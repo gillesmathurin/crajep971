@@ -1,6 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe ActionsController do
+  include AuthenticatedTestHelper
+  fixtures :users
   
   def mock_action(stubs={})
     @mock_action ||= mock_model(Action, stubs)
@@ -48,6 +50,22 @@ describe ActionsController do
       assigns[:action].should == mock_action
       response.should render_template('show')
     end    
+    
+  end
+  
+  describe "GET 'new'" do
+    
+    before(:each) do
+      login_as('aaron')
+      # authorize_as('aaron')
+    end
+    
+    it "should expose a new action as @action " do
+      Action.should_receive(:new).and_return(mock_action)
+      get :new
+      assigns[:action].should == mock_action
+      response.should render_template('new')
+    end
     
   end
 end
