@@ -16,6 +16,15 @@ class ActionsController < ApplicationController
     end
   end
   
+  def show
+    @action = Action.find(params[:id])
+    
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @action }
+    end
+  end
+  
   protected
   
   def find_categorie_actions

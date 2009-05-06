@@ -39,4 +39,15 @@ describe ActionsController do
       end
     end
   end
+  
+  describe "GET 'show'" do
+    
+    it "should expose the requested action as @action" do
+      Action.should_receive(:find).with("1").and_return(mock_action)
+      get :show, :id => "1"
+      assigns[:action].should == mock_action
+      response.should render_template('show')
+    end    
+    
+  end
 end
