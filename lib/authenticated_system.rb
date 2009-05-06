@@ -36,7 +36,7 @@ module AuthenticatedSystem
     end
     
     def admin?
-      current_user.categorie == "0"
+      logged_in? && current_user.categorie == "0"
     end
 
     # Filter method to enforce a login requirement.

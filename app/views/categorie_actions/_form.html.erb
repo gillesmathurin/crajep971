@@ -1,0 +1,16 @@
+            <% form_for @categorie do |f| -%>
+            <table>
+                <tr>
+                    <td><%= f.label :nom, "Nom" %> :</td>
+                    <td><%= f.text_field :nom %></td>
+                </tr>
+                <tr>
+                    <td><%= f.label :theme, "Theme" %> :</td>
+                    <td><%= f.text_area :theme, :cols => 70, :rows => 20 %></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><%= submit_tag "Enregistrer" %></td>
+                </tr>
+            </table>
+            <% end -%>

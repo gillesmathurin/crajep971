@@ -17,6 +17,7 @@ Rails::Initializer.run do |config|
   config.gem 'rspec', :lib => false, :version => '>=1.2.4'
   config.gem 'rubyist-aasm', :lib => 'aasm', :version => '>=2.0.5'
   config.gem 'faker', :lib => false
+  config.gem 'RedCloth', :lib => false, :version => '>=4.1.9'
   
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -50,4 +51,5 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+  require 'RedCloth'
 end

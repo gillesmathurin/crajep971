@@ -8,34 +8,44 @@
         </div>
         
         <% if !@categories.blank? %>
-        <%- @categories.in_groups_of(2, false) do |categories| -%>
+        
+            <%- @categories.in_groups_of(2, false) do |categories| -%>
             <div class="yui-g">
+                
                 <% categories.each do |cat| %>
                 <div class="yui-u">
                     <h3 class="<%= cycle('red', 'green') %>">
                         <%= cat.nom %>
                     </h3>
-                    <p><%= cat.theme %></p>
+                    <p><%= format_text(cat.theme) %></p>
                     
                     <% if !cat.actions.blank? %>
+                    <p>Les 3 dernières actions</p>
                     <ul>
                       <% for action in cat.actions.last_3 %>
-                        <li><%= action.nom %> : <%= truncate(action.description, 30) %></li>
+                        <li><%= action.nom %> : <%= truncate(action.description, :length => 30) %></li>
                       <% end %>
                     </ul>
-                    
-                    <p><%= link_to "En savoir plus …", categorie_action_path(cat) %></p>
                     <% else %>
                      <p>Pas d'actions pour cette categorie</p>
                     <% end %>
+                    <p><%= link_to "En savoir plus …", categorie_action_path(cat) %></p>
+                    
+                    <% if admin? %>
+                        <%= link_to "Modifier", edit_categorie_action_path(cat) %> | <%= link_to "Supprimer", categorie_action_path(cat), :method => :delete, :confirm => "Etes vous sur de vous ?" %>
+                    <% end %>
                 </div>
                 <% end %>
+                
             </div>
             <%- end -%>
+            
         <% else %>
+        
         <div class="yui-g">
             <h2>Pas de Categories d'action créees pour l'instant</h2>
         </div>
+        
         <% end %>
 
     </div>

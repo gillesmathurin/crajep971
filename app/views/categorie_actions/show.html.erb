@@ -7,7 +7,7 @@
         <div class="yui-gc">
             <div class="yui-u first">
                 <p>
-                    <%= @categorie.theme %>
+                    <%= format_text(@categorie.theme) %>
                 </p>
             </div>
             <div class="yui-u">
@@ -17,7 +17,7 @@
                      <% for action in @categorie.actions %>
                         <li>
                             <%= action.nom %>, le : <%= action.created_at.strftime("%d/%m/%Y") %><br/>
-                            <%= truncate(action.description, 80) %> <%= link_to "Voir détails", action_path(action) %>
+                            <%= truncate(action.description, :length => 80) %><br/> <%= link_to "Voir détails", action_path(action) %>
                         </li>
                       <% end %>
                 </ul>

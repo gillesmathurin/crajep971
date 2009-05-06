@@ -132,6 +132,10 @@ describe CategorieActionsController do
   
   describe "DELETE 'destroy'" do
     
+    before(:each) do
+      login_as('aaron')
+    end
+    
     it "should find the requested categorie_action as @categorie, destroy it and redirect_to the index page" do
       CategorieAction.should_receive(:find).with("1").and_return(mock_categorie)
       mock_categorie.should_receive(:destroy)

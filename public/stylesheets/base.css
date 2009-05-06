@@ -78,6 +78,10 @@ h1.accroche {
 	text-align: center;
 }
 
+p {
+	margin-top: 10px;
+}
+
 p.image {
 	text-align: center;
 	margin-top: 10px;
@@ -148,6 +152,25 @@ div.yui-b.sidebar form label,input {
 div.yui-b.sidebar a.unsubscribe {
 	font-size: 0.85em;
 	color: #363636;
+}
+
+table {
+	width: 100%;
+}
+
+table tr td {
+	padding: 2px;
+	vertical-align: top;
+}
+
+table label {
+	font-weight: bold;
+	color: #104687;
+}
+
+li {
+	list-style-position: inside;
+	text-indent: 20px;
 }
 
 
