@@ -49,6 +49,28 @@ class ActionsController < ApplicationController
     end
   end
   
+  def update
+    @action = Action.find(params[:id])
+    
+    respond_to do |format|
+      if @action.update_attributes(params[:uneaction])
+        flash[:notice] = "Mise à jour réussie"
+        format.html { redirect_to action_url(@action) }
+      else
+        format.html { render :action => "edit" }
+      end
+    end
+  end
+  
+  def destroy
+    @action = Action.find(params[:id])
+    @action.destroy
+    
+    respond_to do |format|
+      format.html { redirect_to actions_url }
+    end
+  end
+  
   protected
   
   def find_categorie_actions

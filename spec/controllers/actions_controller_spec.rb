@@ -119,4 +119,49 @@ describe ActionsController do
       end
     end
   end
+  
+  describe "PUT 'update'" do
+    
+    describe "with a valid params" do
+      
+      it "should update the requested action" do
+        Action.should_receive(:find).with("37").and_return(mock_action)
+        mock_action.should_receive(:update_attributes).with({'these' => 'params'})
+        put :update, :id => "37", :uneaction => {:these => 'params'}
+      end
+      
+      it "should expose the requested action as @action" do
+        Action.should_receive(:find).and_return(mock_action(:update_attributes => true))
+        put :update, :id => "1"
+      end
+      
+      it "should redirect to the action" do
+        Action.should_receive(:find).and_return(mock_action(:update_attributes => true))
+        put :update, :id => "1"
+        response.should redirect_to(action_url(mock_action))
+      end
+    end
+    
+    describe "with invalid params" do
+      it "should re-render the edit template" do
+        Action.should_receive(:find).and_return(mock_action(:update_attributes => false))
+        put :update, :id => "1"
+        response.should render_template('edit')
+      end
+    end
+  end
+
+  describe "DELETE 'destroy'" do
+    
+    before(:each) do
+      login_as('aaron')
+    end
+    
+    it "should find the requested action" do
+      Action.should_receive(:find).with("1").and_return(mock_action)
+      mock_action.should_receive(:destroy)
+      delete :destroy, :id => "1"
+      response.should redirect_to(actions_url)
+    end
+  end
 end
