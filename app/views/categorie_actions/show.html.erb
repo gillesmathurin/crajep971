@@ -1,2 +1,34 @@
-<h1>CategorieActions#show</h1>
-<p>Find me in app/views/categorie_actions/show.html.erb</p>
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1 class="accroche"><%= @categorie.nom %></h1>
+        </div>
+        
+        <div class="yui-gc">
+            <div class="yui-u first">
+                <p>
+                    <%= @categorie.theme %>
+                </p>
+            </div>
+            <div class="yui-u">
+                <h3 class="red">Les actions menées</h3>
+                <% if !@categorie.actions.blank? %>
+                <ul>
+                     <% for action in @categorie.actions %>
+                        <li>
+                            <%= action.nom %>, le : <%= action.created_at.strftime("%d/%m/%Y") %><br/>
+                            <%= truncate(action.description, 80) %> <%= link_to "Voir détails", action_path(action) %>
+                        </li>
+                      <% end %>
+                </ul>
+                <% else %>
+                  <p>Pas encore d'actions enregistrées pour cette catégorie'</p>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+</div>
