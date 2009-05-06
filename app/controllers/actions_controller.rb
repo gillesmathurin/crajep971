@@ -28,10 +28,12 @@ class ActionsController < ApplicationController
   
   def new
     @action = Action.new
+    @categories = CategorieAction.all
   end
   
   def edit
     @action = Action.find(params[:id])
+    @categories = CategorieAction.all
   end
   
   def create

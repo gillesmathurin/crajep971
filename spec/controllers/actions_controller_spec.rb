@@ -57,13 +57,16 @@ describe ActionsController do
     
     before(:each) do
       login_as('aaron')
+      @categorie = mock_model(CategorieAction)
       # authorize_as('aaron')
     end
     
-    it "should expose a new action as @action " do
+    it "should expose a new action as @action and the categorie_action as @categories" do
       Action.should_receive(:new).and_return(mock_action)
+      CategorieAction.should_receive(:all).and_return([@categorie])
       get :new
-      assigns[:action].should == mock_action
+      assigns(:action).should == mock_action
+      assigns(:categories).should == [@categorie]
       response.should render_template('new')
     end
     
@@ -75,8 +78,9 @@ describe ActionsController do
       login_as('aaron')
     end
     
-    it "should expose an existing action as @action" do
+    it "should expose an existing action as @action and all the categorie_action as @categories" do
       Action.should_receive(:find).with("1").and_return(mock_action)
+      CategorieAction.should_receive(:all)
       get :edit, :id => "1"
       assigns[:action].should == mock_action
       response.should render_template('edit')
