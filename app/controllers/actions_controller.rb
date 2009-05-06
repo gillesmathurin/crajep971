@@ -30,6 +30,23 @@ class ActionsController < ApplicationController
     @action = Action.new
   end
   
+  def edit
+    @action = Action.find(params[:id])
+  end
+  
+  def create
+    @action = Action.new(params[:uneaction])
+    
+    respond_to do |format|
+      if @action.save
+        flash[:notice] = "Action correctement enregistrée."
+        format.html { redirect_to categorie_action_actions_url(@action.categorie) }
+      else
+        format.html { render :action => 'new' }
+      end
+    end
+  end
+  
   protected
   
   def find_categorie_actions

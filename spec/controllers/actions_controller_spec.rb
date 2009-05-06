@@ -68,4 +68,51 @@ describe ActionsController do
     end
     
   end
+  
+  describe "GET 'edit'" do
+    
+    before(:each) do
+      login_as('aaron')
+    end
+    
+    it "should expose an existing action as @action" do
+      Action.should_receive(:find).with("1").and_return(mock_action)
+      get :edit, :id => "1"
+      assigns[:action].should == mock_action
+      response.should render_template('edit')
+    end
+  end
+  
+  describe "POST 'create'" do
+    
+    describe "with a successful save" do
+      before(:each) do
+        @mock_categorie = mock_model(CategorieAction)
+      end
+      
+      it "should expose a newly created action as @action" do
+        Action.should_receive(:new).with({'these' => 'params'}).and_return(mock_action(:save => true))
+        mock_action.should_receive(:categorie)
+        post 'create', :uneaction => {:these => 'params'}
+        assigns(:action).should == mock_action
+      end
+      
+      it "redirects to the actions index page for this categorie of action" do
+        Action.should_receive(:new).with({'these' => 'params'}).and_return(mock_action(:save => true))
+        mock_action.should_receive(:categorie).and_return(@mock_categorie)
+        post 'create', :uneaction => {:these => 'params'}
+        assigns(:action).should == mock_action
+        response.should redirect_to(categorie_action_actions_url(@mock_categorie))
+      end
+    end
+    
+    describe "with a failed save" do
+      it "should re-render the new template" do
+        Action.should_receive(:new).with({'these' => 'params'}).and_return(mock_action(:save => false))
+        post 'create', :uneaction => {:these => 'params'}
+        assigns(:action).should == mock_action
+        response.should render_template("new")
+      end
+    end
+  end
 end
