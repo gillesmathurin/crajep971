@@ -104,7 +104,6 @@ div.yui-g {
 
 h3 {
 	display: block;
-	width: 20%;
 	text-align: left;
 	color: white;
 	padding-top: 2px;
@@ -113,6 +112,7 @@ h3 {
 	text-indent: 10px;
 	margin-bottom: 10px;
 	margin-top: 10px;
+	width: 15em;
 }
 
 h3.red {

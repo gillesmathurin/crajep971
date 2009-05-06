@@ -1,2 +1,46 @@
-<h1>CategorieActions#index</h1>
-<p>Find me in app/views/categorie_actions/index.html.erb</p>
+<div id="yui-main">
+    <div class="yui-b">
+        
+        <div class="yui-g">
+            <h1 class="accroche">
+                LES CHAMPS D'ACTION DU CRAJEP GUADELOUPE
+            </h1>
+        </div>
+        
+        <% if !@categories.blank? %>
+        <%- @categories.in_groups_of(2, false) do |categories| -%>
+            <div class="yui-g">
+                <% categories.each do |cat| %>
+                <div class="yui-u">
+                    <h3 class="<%= cycle('red', 'green') %>">
+                        <%= cat.nom %>
+                    </h3>
+                    <p><%= cat.theme %></p>
+                    
+                    <% if !cat.actions.blank? %>
+                    <ul>
+                      <% for action in cat.actions.last_3 %>
+                        <li><%= action.nom %> : <%= truncate(action.description, 30) %></li>
+                      <% end %>
+                    </ul>
+                    
+                    <p><%= link_to "En savoir plus …", categorie_action_path(cat) %></p>
+                    <% else %>
+                     <p>Pas d'actions pour cette categorie</p>
+                    <% end %>
+                </div>
+                <% end %>
+            </div>
+            <%- end -%>
+        <% else %>
+        <div class="yui-g">
+            <h2>Pas de Categories d'action créees pour l'instant</h2>
+        </div>
+        <% end %>
+
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+</div>

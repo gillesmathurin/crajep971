@@ -139,4 +139,5 @@ describe CategorieActionsController do
       response.should redirect_to(categorie_actions_url)      
     end
   end
+
 end
