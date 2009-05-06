@@ -1,5 +1,6 @@
 class ActionsController < ApplicationController
   before_filter :find_categorie_actions
+  before_filter :admin_login_required, :only => [:new, :edit, :destroy]
   
   # GET /actions
   # GET /actions.xml

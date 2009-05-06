@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090421151241) do
+ActiveRecord::Schema.define(:version => 20090506005648) do
 
   create_table "actions", :force => true do |t|
     t.string   "nom"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(:version => 20090421151241) do
     t.datetime "activated_at"
     t.string   "state",                                    :default => "passive"
     t.datetime "deleted_at"
+    t.string   "categorie"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
