@@ -8,9 +8,9 @@ task :load_datas => :environment do
   Article.delete_all
   
   1.upto(4) do
-    categorie = CategorieAction.create(:nom => Faker::Name.name, :theme => Faker::Lorem.paragraphs(2))
+    @categorie = CategorieAction.create(:nom => Faker::Name.name, :theme => Faker::Lorem.paragraphs(2))
     1.upto(3) do
-      Action.create(:nom => Faker::Lorem.words(2), :description => Faker::Lorem.paragraphs(3), :categorie_action_id => categorie.id)
+      Action.create(:nom => Faker::Lorem.words(2), :description => Faker::Lorem.paragraphs(3), :categorie_action_id => @categorie.id)
     end
   end
   
