@@ -1,0 +1,27 @@
+<div id="yui-main">
+    <div class="yui-b">
+        
+        <div class="yui-g">
+            <h1 class="accroche"><%= @article.titre %></h1>
+        </div>
+        
+        <div class="yui-g">        
+            <p>
+                <%= format_text(@article.body) %>
+            </p>
+            
+            <p>
+                <%= link_to "Retour", articles_path() %><br/>
+                <%- if admin? -%>
+                    <%= link_to "Modifier", edit_article_path(@article) %> |
+                    <%= link_to "Supprimer", article_path(@article), :method => :delete,
+                     :confirm => "En êtes vous sur ?" %>
+                <%- end -%>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+</div>

@@ -1,0 +1,24 @@
+<div id="yui-main">
+    <div class="yui-b">
+        
+        <div class="yui-g">
+            <h1 class="accroche">Rédiger un article</h1>
+        </div>
+        
+        <div class="yui-g">
+            <div class="yui-u first">
+                <% form_for @article do |f| -%>
+                    <%= render :partial => 'form', :locals => {:f => f} %>
+                <% end -%>
+            </div>
+            
+            <div class="yui-u">
+                <%= render :partial => "shared/edition" %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+</div>

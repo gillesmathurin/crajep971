@@ -1,7 +1,7 @@
-class ActualitesController < ApplicationController
+class ArticlesController < ApplicationController
   
   def index
-    @actualites = Article.of_the_month(:order => 'created_at desc')
+    @articles = Article.of_the_month(:order => 'created_at desc')
     
     respond_to do |format|
       format.html {  }

@@ -1,0 +1,36 @@
+<div id="yui-main">
+    <div class="yui-b">
+        
+        <div class="yui-g">
+            <h1 class="accroche">L'Actualité du Mois</h1>
+        </div>
+        
+        <div class="yui-gc">
+            <div class="yui-u first">
+                <% if !@articles.blank? %>
+                  <% for actu in @articles %>
+                    <p>
+                        <b><%= actu.titre %></b> - <pre>publié le : <%= I18n.l actu.created_at %></pre>
+                    </p>
+                    <p>
+                        <%= truncate(actu.body, :length => 150) %><br/>
+                        <%= link_to "Lire plus …", article_path(actu) %>
+                    </p>
+                  <% end %>
+                <% else %>
+                  <p>
+                    Pas d'articles pour ce mois.
+                  </p>
+                <% end %>
+            </div>
+            
+            <div class="yui-u">
+                <h3 class="red">Archives</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+</div>
