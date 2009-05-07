@@ -16,7 +16,7 @@ Rails::Initializer.run do |config|
   config.gem 'rspec-rails', :lib => false, :version => '>=1.2.4'
   config.gem 'rspec', :lib => false, :version => '>=1.2.4'
   config.gem 'rubyist-aasm', :lib => 'aasm', :version => '>=2.0.5'
-  config.gem 'faker', :lib => false
+  config.gem 'faker', :lib => false, :version => '>=0.3.1'
   config.gem 'RedCloth', :lib => false, :version => '>=4.1.9'
   
   # Settings in config/environments/* take precedence over those specified here.
