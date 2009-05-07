@@ -1,4 +1,4 @@
-require 'faker'
+# require 'faker'
 
 desc "Creation de 4 categories d'actions avec 3 actions associées"
 task :load_datas => :environment do
