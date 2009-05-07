@@ -14,7 +14,8 @@
                     </p>
                     <p>
                         <%= truncate(actu.body, :length => 150) %><br/>
-                        <%= link_to "Lire plus …", article_path(actu) %>
+                        <pre><%= actu.comments.size %> commentaires</pre>
+                        <%= link_to "Lire plus …", article_path(actu) %><br/><br/>                        
                     </p>
                   <% end %>
                 <% else %>
