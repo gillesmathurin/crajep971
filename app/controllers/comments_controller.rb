@@ -51,7 +51,7 @@ class CommentsController < ApplicationController
     
     respond_to do |format|
       if @article
-        format.html { render :partial => "comments", :object => @article, :layout => false } #redirect_to article_path(@article) }
+        format.html { redirect_to article_path(@article) }
       else
         format.html { redirect_to comments_path() }
       end
