@@ -10,7 +10,7 @@
                 <% if !@articles.blank? %>
                   <% for actu in @articles %>
                     <p>
-                        <b><%= actu.titre %></b> - <pre>publié le : <%= I18n.l actu.created_at %></pre>
+                        <b><%= actu.titre %></b> - <pre>publié le : <%= I18n.l actu.created_at %> par <%= actu.author.login %></pre>
                     </p>
                     <p>
                         <%= truncate(actu.body, :length => 150) %><br/>

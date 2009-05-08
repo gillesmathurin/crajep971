@@ -18,10 +18,16 @@ task :load_datas => :environment do
   User.create(:name => "beta", :login => "beta", :email => Faker::Internet.email, :password => "betabeta",
    :password_confirmation => "betabeta", :categorie => "0", :state => 'active')
    
-   # Creation de 4 articles
-   1.upto(4) do
-     Article.create(:titre => Faker::Lorem.words(2), :body => Faker::Lorem.paragraphs(3), :user_id => User.find_by_login("beta").id)
-   end 
+   # Creation de 4 articles et de 2 commentaires par articles
+  1.upto(4) do
+   Article.create(:titre => Faker::Lorem.words(2), :body => Faker::Lorem.paragraphs(3), :user_id => User.find_by_login("beta").id)
+  end 
+  Article.all.each do |article|
+    2.times do
+      article.comments.create(:body => Faker::Lorem.paragraphs(2), :user_id => User.find_by_login("beta").id)
+    end
+  end
+
 end
   
 

@@ -19,6 +19,30 @@
                 <%- end -%>
             </p>
         </div>
+        
+        <div class="yui-g">
+            
+            <h3 class="green">Vos commentaires</h3>
+            <p>
+                <%= link_to "(+) Ajouter un commentaire", new_article_comment_path(@article) , :class => "button_link" %>
+            </p>
+            
+            <% if !@article.comments.blank? %>
+              <% for comment in @article.comments %>
+                <div class="comment">
+                    <b>De : <%= comment.author.login %></b>
+                    <%= format_text(comment.body) %>
+                    <% if admin? %>
+                        <%= link_to "(-) Supprimer", comment_path(comment), :method => :delete,
+                         :confirm => "En êtes vous sur ?", :class => "button_link2" %>
+                    <% end %>
+                </div>
+              <% end %>
+            <% else %>
+              
+            <% end %>
+            
+        </div>
     </div>
 </div>
 

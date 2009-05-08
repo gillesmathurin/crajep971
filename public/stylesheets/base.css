@@ -177,6 +177,52 @@ pre {
 	font-size: 0.8em;
 }
 
+a.button_link {
+	font-size: 0.8em;
+	background-color: #9c775b;
+	color: white;
+	height: 1.8em;
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 5px;
+	text-decoration: none;
+	line-height: 1.8em;
+	border: 1px double #6c6c6c;
+}
+
+a.button_link:hover {
+	background-color: #92a2ff;
+}
+
+a.button_link2 {
+	font-size: 0.7em;
+	background-color: maroon;
+	color: white;
+	height: 1.5em;
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 5px;
+	text-decoration: none;
+	border: 1px double #6c6c6c;
+	margin-top: 2px;
+	margin-bottom: 5px;
+	line-height: 1.5em;
+	text-align: center;
+}
+
+a.button_link2:hover {
+	background-color: #92a2ff;
+}
+
+div.comment {
+	border-left: 3px solid gray;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding-left: 5px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+
 
 
 /* @end */
