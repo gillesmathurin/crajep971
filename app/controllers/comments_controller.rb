@@ -46,12 +46,12 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    @comment = Comment.find(params[:id])
+    @comment = @article.comments.find(params[:id])
     @comment.destroy
     
     respond_to do |format|
       if @article
-        format.html { redirect_to article_path(@artile) }
+        format.html { render :partial => "comments", :object => @article, :layout => false } #redirect_to article_path(@article) }
       else
         format.html { redirect_to comments_path() }
       end

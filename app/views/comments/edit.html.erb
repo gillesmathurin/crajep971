@@ -1,2 +1,25 @@
-<h1>Comments#edit</h1>
-<p>Find me in app/views/comments/edit.html.erb</p>
+<div id="yui-main">
+   
+    <div class="yui-g">
+        <h1 class="accroche">Enregistrement d'un commentaire</h1>
+    </div>
+    
+    <div class="yui-gc">
+        
+        <div class="yui-u first">
+            <% form_for @comment, :url => article_comment_path(@article, @comment), :html => {:method => :put} do |f| -%>
+                <%= render :partial => 'form', :locals => {:f => f} %>
+            <% end -%>
+        </div>
+        
+        <div class="yui-u">
+            <%= render :partial => "shared/edition" %>
+        </div>
+        
+    </div>
+
+</div>
+
+<div class="yui-b sidebar">
+    
+</div>

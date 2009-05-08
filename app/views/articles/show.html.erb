@@ -28,19 +28,20 @@
             </p>
             
             <% if !@article.comments.blank? %>
-              <% for comment in @article.comments %>
-                <div class="comment">
-                    <b>De : <%= comment.author.login %></b>
-                    <%= format_text(comment.body) %>
-                    <% if admin? %>
-                        <%= link_to "(-) Supprimer", comment_path(comment), :method => :delete,
-                         :confirm => "En êtes vous sur ?", :class => "button_link2" %>
+                <% for comment in @article.comments %>
+                      <div class="comment">
+                          <b>De : <%= comment.author.login %></b>
+                          <%= format_text(comment.body) %>
+                          <% if admin? %>
+                              <%= link_to "(-) Supprimer", article_comment_path(@article, comment),
+                               :method => :delete, :class => "button_link2" %>
+                          <% end %>
+                      </div>
                     <% end %>
-                </div>
-              <% end %>
             <% else %>
-              
+              <p>Pas de commentaires pour cet article.</p>
             <% end %>
+
             
         </div>
     </div>
