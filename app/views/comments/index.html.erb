@@ -1,2 +1,45 @@
-<h1>Comments#index</h1>
-<p>Find me in app/views/comments/index.html.erb</p>
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1 class="accroche">Commentaires de l'article <%= @article.titre %></h1>
+            <%= link_to "Retour à l'article", article_path(@article) %>
+        </div>
+        
+        <% if !@comments.blank? %>
+        
+          <% for comment in @comments %>
+             <div class="yui-g">
+                 <p>
+                    <b>De :</b> <%= comment.author.login %> publié le : <%= I18n.l comment.created_at %>
+                 </p>
+                 <%= format_text(comment.body) %>
+             </div>
+             
+             <% if admin? %>
+                 <div class="yui-g">
+                     <%= link_to "Modifier", edit_article_comment_path(@article, comment), :class => "button_link2" %> |
+                     <%= link_to "Supprimer", article_comment_path(@article, comment), :method => :delete,
+                     :confirm => "En êtes vous sur ?", :class => "button_link2" %>
+                 </div>
+             <% end %>
+             
+          <% end %>
+          
+        <% else %>
+        
+            <div class="yui-g">
+                Pas de commentaires pour cet article, <%= link_to "Ajouter le votre", new_article_comment_path(@article, comment) %>
+            </div>
+            
+        <% end %>
+        
+        <div class="yui-g">
+            <%= link_to "Retour à l'article", article_path(@article) %>
+        </div>
+    </div>
+    
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+</div>

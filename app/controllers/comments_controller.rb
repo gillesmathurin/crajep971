@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_filter :find_article
   
   def index
-    @comments = @articles.comments
+    @comments = @article.comments
   end
 
   def show

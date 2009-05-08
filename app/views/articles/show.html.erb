@@ -24,7 +24,7 @@
             
             <h3 class="green">Vos commentaires</h3>
             <p>
-                <%= link_to "(+) Ajouter un commentaire", new_article_comment_path(@article) , :class => "button_link" %>
+                <%= link_to "(+) Ajouter un commentaire", new_article_comment_path(@article) , :class => "button_link" %> | <%= link_to "Tous les commentaires", article_comments_path(@article), :class => "button_link" %>
             </p>
             
             <% if !@article.comments.blank? %>
