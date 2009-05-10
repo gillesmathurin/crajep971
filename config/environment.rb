@@ -13,8 +13,8 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
   config.gem 'webrat', :lib => false, :version => '>=0.4.4'
   config.gem 'cucumber', :lib => false, :version => '>=0.3.0'
-  config.gem 'rspec-rails', :lib => false, :version => '>=1.2.4'
-  config.gem 'rspec', :lib => false, :version => '>=1.2.4'
+  config.gem 'rspec-rails', :lib => false, :version => '~>1.2.6'
+  config.gem 'rspec', :lib => false, :version => '~>1.2.6'
   config.gem 'rubyist-aasm', :lib => 'aasm', :version => '>=2.0.5'
   config.gem 'faker', :lib => false, :version => '>=0.3.1'
   config.gem 'RedCloth', :lib => false, :version => '>=4.1.9'
