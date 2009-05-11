@@ -8,6 +8,10 @@
                         <td><%= f.text_area :body %></td>
                     </tr>
                     <tr>
+                        <td><%= f.label :photo, "Photo" %></td>
+                        <td><%= f.file_field :photo %></td>
+                    </tr>
+                    <tr>
                         <td>&nbsp;</td>
                         <td><%= submit_tag "Enregistrer" %></td>
                     </tr>

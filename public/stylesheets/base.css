@@ -102,6 +102,11 @@ p.annonce {
 	color: black;
 }
 
+p.article_photo {
+	float: left;
+	margin-right: 10px;
+}
+
 div.yui-g {
 	margin-bottom: 10px;
 }
