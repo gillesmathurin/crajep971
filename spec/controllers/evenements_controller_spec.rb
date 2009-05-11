@@ -34,6 +34,19 @@ describe EvenementsController do
       response.should render_template('index')
     end
   end
+  
+  describe "GET 'evenements_du_mois" do
+    
+    before(:each) do
+      @date = "2009-05-01".to_date
+    end
+    it "should expose the evenements for the requested month as @evenements" do
+      Evenement.should_receive(:of_the_given_month).with(@date).and_return([mock_evenement])
+      get 'evenements_du_mois', :day => @date
+      assigns(:evenements).should == [mock_evenement]
+      response.should render_template('evenements_du_mois')
+    end
+  end
 
   describe "GET 'show'" do
     

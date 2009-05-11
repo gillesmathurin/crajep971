@@ -16,6 +16,14 @@ class EvenementsController < ApplicationController
       format.html { render :action => 'index' }
     end
   end
+  
+  def evenements_du_mois
+    @evenements = Evenement.of_the_given_month(params[:day].to_date)
+    
+    respond_to do |format|
+      format.html {  }
+    end
+  end
 
   def show
     @evenement = Evenement.find(params[:id])
