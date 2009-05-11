@@ -30,8 +30,8 @@
                 <%= link_to "(+) Ajouter un commentaire", new_article_comment_path(@article) , :class => "button_link" %> | <%= link_to "Tous les commentaires", article_comments_path(@article), :class => "button_link" %>
             </p>
             
-            <% if !@article.comments.blank? %>
-                <% for comment in @article.comments %>
+            <% if !@article.comments.last_five.blank? %>
+                <% for comment in @article.comments.last_five %>
                       <div class="comment">
                           <b>De : <%= comment.author.login %></b>
                           <%= format_text(comment.body) %>

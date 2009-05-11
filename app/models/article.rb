@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  has_many :comments
+  has_many :comments, :dependent => :destroy
   belongs_to :author, :class_name => "User", :foreign_key => "user_id"
   
   has_attached_file :photo, :styles => { :thumb => "100x100" }
