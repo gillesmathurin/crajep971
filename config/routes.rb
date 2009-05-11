@@ -10,6 +10,8 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :evenements
   
+  map.evenenemts_du_jour '/evenements_du_jour/:day', :controller => 'evenements', :action => 'evenenemts_du_jour', :day => nil
+  
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'

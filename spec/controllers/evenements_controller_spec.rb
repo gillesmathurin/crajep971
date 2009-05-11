@@ -23,6 +23,17 @@ describe EvenementsController do
     end
     
   end
+  
+  describe "GET 'evenements_du_jour" do
+    
+    it "should expose the evenements for the requested date as @evenements into the index template" do
+      Evenement.should_receive(:find).with(:all, :conditions => ['date = ?',"2009-05-01" ]).
+        and_return([mock_evenement(:date => "2009-05-01")])
+      get 'evenenemts_du_jour', :day => "2009-05-01"
+      assigns(:evenements).should == [mock_evenement]
+      response.should render_template('index')
+    end
+  end
 
   describe "GET 'show'" do
     
@@ -110,7 +121,6 @@ describe EvenementsController do
   end
   
   describe "DELETE 'destroy'" do
-    
     before(:each) do
       login_as('aaron')
     end

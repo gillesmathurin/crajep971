@@ -8,6 +8,14 @@ class EvenementsController < ApplicationController
       format.html {  }
     end
   end
+  
+  def evenenemts_du_jour
+    @evenements = Evenement.find(:all, :conditions => ['date = ?', params[:day]])
+    
+    respond_to do |format|
+      format.html { render :action => 'index' }
+    end
+  end
 
   def show
     @evenement = Evenement.find(params[:id])

@@ -1,2 +1,14 @@
 <h1>Evenements#index</h1>
 <p>Find me in app/views/evenements/index.html.erb</p>
+
+<%= calendar_for(2009, 5, &calendar_events_proc) %>
+
+<% if !@evenements.blank? %>
+  <% for event in @evenements %>
+    <p>
+        <%= event.titre %>
+    </p>
+  <% end %>
+<% else %>
+  
+<% end %>
