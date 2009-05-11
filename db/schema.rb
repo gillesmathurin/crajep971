@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090509142552) do
+ActiveRecord::Schema.define(:version => 20090511192127) do
 
   create_table "actions", :force => true do |t|
     t.string   "nom"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20090509142552) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "lieu"
   end
 
   create_table "liens", :force => true do |t|

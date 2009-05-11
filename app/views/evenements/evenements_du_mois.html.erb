@@ -10,7 +10,7 @@
                  <% if !@evenements.blank? %>
                       <% for event in @evenements %>
                         <p>
-                            <b><%= event.titre %></b> - <pre>publié le : <%= I18n.l event.created_at %></pre>
+                            <b><%= event.titre %></b> - <pre>date : <%= I18n.l event.created_at %>, lieu : <%= event.lieu %></pre>
                         </p>
                         <p>
                             <%= truncate(event.description, :length => 80) %><br/>

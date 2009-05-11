@@ -1,2 +1,29 @@
-<h1>Evenements#show</h1>
-<p>Find me in app/views/evenements/show.html.erb</p>
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1 class="accroche"><%= @evenement.titre %></h1>
+            <p>
+                <b>Date :</b><%= I18n.l @evenement.date %> | <b>Lieu :</b><%= @evenement.lieu %>
+            </p>
+        </div>
+        
+        <div class="yui-g">
+            <%= format_text(@evenement.description) %>
+            <p>
+                <%= link_to "Retour", evenements_path() %>
+            </p>
+        </div>
+        
+        <div class="yui-g">
+            <% if admin? %>
+                <p>
+                    <%= link_to "Modifier", edit_evenement_path(@evenement), :class => "button_link2" %> | <%= link_to "Supprimer", evenement_path(@evenement), :method => :delete, :class => "button_link2" %>
+                </p>
+             <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+</div>
