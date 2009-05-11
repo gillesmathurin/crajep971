@@ -8,6 +8,9 @@
         </div>
         
         <div class="yui-g">
+            <p class="article_photo">
+                <%= image_tag(@evenement.photo.url) if has_photo?(@evenement) %>
+            </p>
             <%= format_text(@evenement.description) %>
             <p>
                 <%= link_to "Retour", evenements_path() %>

@@ -8,4 +8,12 @@ module EvenementsHelper
       end
     end
   end
+  
+  def has_photo?(evenement)
+    if evenement.photo.url != "/photos/original/missing.png"
+      return true
+    else
+      return false
+    end
+  end
 end

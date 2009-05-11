@@ -16,6 +16,13 @@
                             <%= truncate(event.description, :length => 80) %><br/>
                             <%= link_to "voir plus …", evenement_path(event) %>
                         </p>
+                        
+                        <% if admin? %>
+                            <p>
+                                <%= link_to "Modifier", edit_evenement_path(event), :class => "button_link2" %> |
+                                 <%= link_to "Supprimer", evenement_path(event), :method => :delete, :class => "button_link2" %>
+                            </p>
+                         <% end %>
                       <% end %>
                  <% else %>
                      <p>Pas d'évènements programmés pour ce mois</p>

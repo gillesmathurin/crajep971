@@ -1,0 +1,24 @@
+                    <tr>
+                        <td><%= f.label :date, "Date" %></td>
+                        <td><%= f.date_select :date %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label :lieu, "Lieu" %></td>
+                        <td><%= f.text_field :lieu %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label :titre, "Titre" %></td>
+                        <td><%= f.text_field :titre %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label :description, "Description" %></td>
+                        <td><%= f.text_area :description %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label :photo, "Image" %></td>
+                        <td><%= f.file_field :photo %></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><%= submit_tag "Enregistrer" %></td>
+                    </tr>

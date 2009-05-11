@@ -1,2 +1,26 @@
-<h1>Evenements#new</h1>
-<p>Find me in app/views/evenements/new.html.erb</p>
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1 class="accroche">Ajouter un Evénement à l'agenda</h1>
+        </div>
+        
+        <div class="yui-g">
+            <div class="yui-u first">
+                <% form_for @evenement, :html => { :multipart => true } do |f| -%>
+                  <table>
+                    <%= render :partial => 'form', :locals => { :f => f } %>
+                  </table>
+                <% end -%>
+            </div>
+            
+            <div class="yui-u">
+                <%= render :partial => "shared/edition" %>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+</div>
