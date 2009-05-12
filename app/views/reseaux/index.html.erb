@@ -1,14 +1,11 @@
 <div id="yui-main">
     <div class="yui-b">
         <div class="yui-g">
-            <h1 class="accroche">LE RESEAU CRAJEP</h1>
+            <h1 class="accroche">LE RESEAU CRAJEP 971</h1>
         </div>
         
         <div class="yui-g">
-            <h2>Vous aussi devenez membre du réseau CRAJEP</h2>
-            <p>
-                Accédez au formulaire de candidature, <%= link_to "ici", new_candidature_path() %>
-            </p>
+            
         </div>
         
         <div class="yui-gc">
@@ -16,7 +13,14 @@
                 
             </div>
             <div class="yui-u">
-                Vous souhaitez faire partie du réseau CRAJEP, veuillez remplir le formulaire
+                <h3 class="red">Devenez membre du réseau</h3>
+                <p class="button">
+                    <%= link_to ">> Formulaire d'adhésion", new_candidature_path(), :class => "big_button" %>
+                </p>
+                <p>
+                    En devenant membre du réseau, vous aurez accès aux ressources documentaires, participerez aux actions et réunions etc …
+                </p>
+                <p><%= Faker::Lorem.paragraphs(1) %></p>
             </div>
             
         </div>

@@ -113,6 +113,10 @@ p.invitation {
 	color: #ec366d;
 }
 
+p.button {
+	text-align: left;
+}
+
 div.yui-g {
 	margin-bottom: 10px;
 }
@@ -223,6 +227,26 @@ a.button_link2 {
 
 a.button_link2:hover {
 	background-color: #92a2ff;
+}
+
+a.big_button {
+	background-color: #f5ed63;
+	color: #555;
+	height: 1.8em;
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 5px;
+	line-height: 1.8em;
+	border: 1px dotted gray;
+	font-size: 1.1em;
+	text-align: left;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a.big_button:hover {
+	background-color: #00b760;
+	color: white;
 }
 
 a.liste_lien {
