@@ -44,7 +44,8 @@ class CandidaturesController < ApplicationController
 
     respond_to do |format|
       if @candidature.save
-        flash[:notice] = 'Candidature was successfully created.'
+        Mailer.deliver_candidature(@candidature)
+        flash[:notice] = 'Votre demande a bien été prise en compte.'
         format.html { redirect_to(@candidature) }
         format.xml  { render :xml => @candidature, :status => :created, :location => @candidature }
       else
@@ -61,7 +62,7 @@ class CandidaturesController < ApplicationController
 
     respond_to do |format|
       if @candidature.update_attributes(params[:candidature])
-        flash[:notice] = 'Candidature was successfully updated.'
+        flash[:notice] = 'Candidature modifiée correctement.'
         format.html { redirect_to(@candidature) }
         format.xml  { head :ok }
       else
