@@ -4,13 +4,15 @@
             <h1 class="accroche">LE RESEAU CRAJEP 971</h1>
         </div>
         
-        <div class="yui-g">
-            
-        </div>
-        
         <div class="yui-gc">
             <div class="yui-u first">
+                <h3 class="green">Les associations membres</h3>
                 
+                <% @associations.each do |association| %>
+                    <p>
+                        <%= association.nom %> : <%= association.objet_social %>
+                    </p>
+                <% end %>
             </div>
             <div class="yui-u">
                 <h3 class="red">Devenez membre du réseau</h3>
