@@ -21,5 +21,5 @@ ActionMailer::Base.smtp_settings = {
   :password => "zFDLm4R1jKuT"
 }
 ActionMailer::Base.perform_deliveries = true # TODO set to true for production
-ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.raise_delivery_errors = false
 ActionMailer::Base.default_charset = "iso-8859-1"
