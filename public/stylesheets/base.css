@@ -265,6 +265,17 @@ div.comment {
 	border-bottom-width: 1px;
 }
 
+span.nom_membre {
+	color: #214a84;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+span.coor_membre {
+	font-size: 0.9em;
+	color: black;
+}
+
 
 
 /* @end */

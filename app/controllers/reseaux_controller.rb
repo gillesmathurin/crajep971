@@ -1,12 +1,26 @@
 class ReseauxController < ApplicationController
+  
   def index
-    @associations = Association.find_the_crajep_ones
+    begin
+      @associations = Association.find_the_crajep_ones
+    rescue ActiveResource::ResourceNotFound, ActiveResource::ServerError
+      redirect_to :action => 'not_found'
+    end
+    # @membres = Membre.all
+    
+    respond_to do |format|
+      format.html {  }
+      # format.xml { render :xml => { @associations.to_xml, @membres.to_xml } }
+    end
+  end
+  
+  def not_found
   end
 
   def show
   end
 
-  def nex
+  def new
   end
 
   def edit

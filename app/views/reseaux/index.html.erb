@@ -5,15 +5,25 @@
         </div>
         
         <div class="yui-gc">
+            
             <div class="yui-u first">
                 <h3 class="green">Les associations membres</h3>
                 
                 <% @associations.each do |association| %>
                     <p>
-                        <%= association.nom %> : <%= association.objet_social %>
+                        <span class="nom_membre"><%= association.nom %></span><br/> 
+                        <span class="coor_membre"><%= association.adresse_siegesocial %>
+                             <%= association.code_postal %> <%= association.ville %></span><br/>
+                    </p>
+                    <p>
+                        <% unless association.objet_social.blank? %>
+                        <strong>Objet :</strong> <%= truncate(association.objet_social, :length => 200) %><br/>
+                        <%= link_to "Plus d'info sur Asso-Guadeloupe.fr", "http://www.asso-guadeloupe.fr/recherches/#{association.id}" %>
+                        <% end %>
                     </p>
                 <% end %>
             </div>
+            
             <div class="yui-u">
                 <h3 class="red">Devenez membre du réseau</h3>
                 <p class="button">
