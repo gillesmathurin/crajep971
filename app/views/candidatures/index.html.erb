@@ -1,0 +1,38 @@
+<h1>Listing candidatures</h1>
+
+<table>
+  <tr>
+    <th>Nom asso</th>
+    <th>Adresse</th>
+    <th>Cp</th>
+    <th>Ville</th>
+    <th>Tel</th>
+    <th>Fax</th>
+    <th>Email</th>
+    <th>Nom contact</th>
+    <th>Tel contact</th>
+    <th>Objet</th>
+  </tr>
+
+<% @candidatures.each do |candidature| %>
+  <tr>
+    <td><%=h candidature.nom_asso %></td>
+    <td><%=h candidature.adresse %></td>
+    <td><%=h candidature.cp %></td>
+    <td><%=h candidature.ville %></td>
+    <td><%=h candidature.tel %></td>
+    <td><%=h candidature.fax %></td>
+    <td><%=h candidature.email %></td>
+    <td><%=h candidature.nom_contact %></td>
+    <td><%=h candidature.tel_contact %></td>
+    <td><%=h candidature.objet %></td>
+    <td><%= link_to 'Show', candidature %></td>
+    <td><%= link_to 'Edit', edit_candidature_path(candidature) %></td>
+    <td><%= link_to 'Destroy', candidature, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New candidature', new_candidature_path %>

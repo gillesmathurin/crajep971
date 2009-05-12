@@ -1,2 +1,29 @@
-<h1>Reseaux#index</h1>
-<p>Find me in app/views/reseaux/index.html.erb</p>
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1 class="accroche">LE RESEAU CRAJEP</h1>
+        </div>
+        
+        <div class="yui-g">
+            <h2>Vous aussi devenez membre du réseau CRAJEP</h2>
+            <p>
+                Accédez au formulaire de candidature, <%= link_to "ici", new_candidature_path() %>
+            </p>
+        </div>
+        
+        <div class="yui-gc">
+            <div class="yui-u first">
+                
+            </div>
+            <div class="yui-u">
+                Vous souhaitez faire partie du réseau CRAJEP, veuillez remplir le formulaire
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+    <%= render :partial => "shared/newsletter" %>
+</div>
