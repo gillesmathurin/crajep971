@@ -1,53 +1,74 @@
-<p>
-  <b>Nom asso:</b>
-  <%=h @candidature.nom_asso %>
-</p>
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1 class="accroche">Candidature</h1>
+        </div>
+        
+        <div class="yui-g">
+            <p>
+              <b>Nom association:</b>
+              <%=h @candidature.nom_asso %>
+            </p>
 
-<p>
-  <b>Adresse:</b>
-  <%=h @candidature.adresse %>
-</p>
+            <p>
+              <b>Adresse:</b>
+              <%=h @candidature.adresse %>
+            </p>
 
-<p>
-  <b>Cp:</b>
-  <%=h @candidature.cp %>
-</p>
+            <p>
+              <b>Code postal:</b>
+              <%=h @candidature.cp %>
+            </p>
 
-<p>
-  <b>Ville:</b>
-  <%=h @candidature.ville %>
-</p>
+            <p>
+              <b>Ville:</b>
+              <%=h @candidature.ville %>
+            </p>
 
-<p>
-  <b>Tel:</b>
-  <%=h @candidature.tel %>
-</p>
+            <p>
+              <b>Tel:</b>
+              <%=h @candidature.tel %>
+            </p>
 
-<p>
-  <b>Fax:</b>
-  <%=h @candidature.fax %>
-</p>
+            <p>
+              <b>Fax:</b>
+              <%=h @candidature.fax %>
+            </p>
 
-<p>
-  <b>Email:</b>
-  <%=h @candidature.email %>
-</p>
+            <p>
+              <b>Email:</b>
+              <%=h @candidature.email %>
+            </p>
 
-<p>
-  <b>Nom contact:</b>
-  <%=h @candidature.nom_contact %>
-</p>
+            <p>
+              <b>Nom contact:</b>
+              <%=h @candidature.nom_contact %>
+            </p>
 
-<p>
-  <b>Tel contact:</b>
-  <%=h @candidature.tel_contact %>
-</p>
+            <p>
+              <b>Tel contact:</b>
+              <%=h @candidature.tel_contact %>
+            </p>
 
-<p>
-  <b>Objet:</b>
-  <%=h @candidature.objet %>
-</p>
+            <p>
+              <b>Objet:</b>
+              <%=h @candidature.objet %>
+            </p>
+        </div>
+        
+        <div class="yui-g">
+            <% if admin? %>
+                <%= link_to 'Modifier', edit_candidature_path(@candidature) %> |
+                <%= link_to 'Retour', candidatures_path %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+    <%= render :partial => "shared/newsletter" %>
+</div>
 
 
-<%= link_to 'Edit', edit_candidature_path(@candidature) %> |
-<%= link_to 'Back', candidatures_path %>
+
