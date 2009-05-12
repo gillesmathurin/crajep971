@@ -4,7 +4,7 @@ class Mailer < ActionMailer::Base
   def candidature(candidature)
     subject "Demande d'adhésion"
     from "postmaster@crajep-temp.com"
-    recipients "gwadaman30@gmail.com"
+    recipients "gillesmath@me.com"
     cc ['agouti4@wanadoo.fr', 'gilbert.sacile@orange.fr', 'bruno.benony@gmail.com' ]
     body :candidature => candidature
     sent_on Time.now
