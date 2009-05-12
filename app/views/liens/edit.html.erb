@@ -5,6 +5,7 @@
         </div>
         
         <div class="yui-g">
+            <%= error_messages_for :lien %>
             <% form_for @lien do |f| -%>
                 <%= render :partial => 'form', :locals => {:f => f} %>
             <% end -%>

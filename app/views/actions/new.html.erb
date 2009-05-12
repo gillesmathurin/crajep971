@@ -5,6 +5,7 @@
 
     <div class="yui-gc">
         <div class="yui-u first">
+            <%= error_messages_for :uneaction %>
             <% form_for :uneaction, :url => actions_path do |f| -%>
                 <%= render :partial => 'form', :locals => {:f => f} %>
             <% end -%>

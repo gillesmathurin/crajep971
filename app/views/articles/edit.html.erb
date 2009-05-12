@@ -7,6 +7,7 @@
         
         <div class="yui-g">
             <div class="yui-u first">
+                <%= error_messages_for :article %>
                 <% form_for @article, :html => {:multipart => true} do |f| -%>
                     <%= render :partial => 'form', :locals => {:f => f} %>
                 <% end -%>
