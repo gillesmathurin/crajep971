@@ -1,9 +1,9 @@
-<p>
+<p class="login">
     Newsletter
 </p>
 <%- form_tag '' do -%>
     <label>Votre email :</label><br/>
-    <%= text_field_tag 'email', "", :size => 14 %><br/>
+    <%= text_field_tag 'email', "", :size => 20 %><br/>
     <%= submit_tag "S'inscrire" %><br/>
-    <%= link_to "Désinscription", "", :class => "unsubscribe" %><br/><br/>
+    <%= link_to "Se désinscrire", "", :class => "unsubscribe" %><br/><br/>
 <%- end -%>
