@@ -43,12 +43,14 @@ describe CandidaturesController do
     describe "with valid params" do
       it "assigns a newly created candidature as @candidature" do
         Candidature.stub!(:new).with({'these' => 'params'}).and_return(mock_candidature(:save => true))
+        Mailer.should_receive(:deliver_candidature).with(mock_candidature)
         post :create, :candidature => {:these => 'params'}
         assigns[:candidature].should equal(mock_candidature)
       end
 
       it "redirects to the created candidature" do
         Candidature.stub!(:new).and_return(mock_candidature(:save => true))
+        Mailer.should_receive(:deliver_candidature).with(mock_candidature)
         post :create, :candidature => {}
         response.should redirect_to(candidature_url(mock_candidature))
       end
