@@ -107,6 +107,12 @@ p.article_photo {
 	margin-right: 10px;
 }
 
+p.invitation {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #ec366d;
+}
+
 div.yui-g {
 	margin-bottom: 10px;
 }
@@ -184,7 +190,7 @@ pre {
 
 a.button_link {
 	font-size: 0.8em;
-	background-color: #9c775b;
+	background-color: #00a57e;
 	color: white;
 	height: 1.8em;
 	display: inline-block;
@@ -217,6 +223,13 @@ a.button_link2 {
 
 a.button_link2:hover {
 	background-color: #92a2ff;
+}
+
+a.liste_lien {
+	font-size: 1.2em;
+	font-weight: bold;
+	text-decoration: none;
+	color: #5d4421;
 }
 
 div.comment {

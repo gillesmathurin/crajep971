@@ -2,12 +2,15 @@
 
 desc "Creation de 4 categories d'actions avec 3 actions associées"
 task :load_datas => :environment do
+  # Reset the table
   CategorieAction.delete_all
   Action.delete_all
   User.delete_all
   Article.delete_all
   Evenement.delete_all
+  Lien.delete_all
   
+  # Création des catégories et des actions
   1.upto(4) do
     @categorie = CategorieAction.create(:nom => Faker::Name.name, :theme => Faker::Lorem.paragraphs(2))
     1.upto(3) do
@@ -35,7 +38,11 @@ task :load_datas => :environment do
     Evenement.create(:date => @next_date, :titre => Faker::Lorem.words(2), :description => Faker::Lorem.paragraphs(2))
     @next_date += 5.days
   end
-
+  
+  # Création de liens
+  10.times do
+    Lien.create(:nom => Faker::Lorem.words(2), :adresse => "http://www." + Faker::Internet.domain_name())
+  end
 end
   
 

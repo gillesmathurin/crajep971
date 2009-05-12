@@ -1,2 +1,48 @@
-<h1>Liens#index</h1>
-<p>Find me in app/views/liens/index.html.erb</p>
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1 class="accroche">Nos liens</h1>
+            <% if admin? %>
+                <p><%= link_to "+ Ajouter un nouveau lien", new_lien_path(), :class => "button_link" %></p>
+            <% end %>
+        </div>
+        
+        <div class="yui-gc">
+            <div class="yui-u first">
+                <% if !@liens.blank? %>
+                  <% for lien in @liens %>
+                    <p>
+                        <%= link_to lien.nom, lien.adresse, :class => "liste_lien" %><br/>
+                        <%= lien.adresse %>
+                    </p>
+                    <% if admin? %>
+                        <p>
+                            <%= link_to "Modifier", edit_lien_path(lien), :class => "button_link2" %> |
+                            <%= link_to "Supprimer", lien_path(lien), :method => :delete, :class => "button_link2" %>
+                        </p>
+                    <% end %>
+                  <% end %>
+                <% else %>
+                    Pas encore de liens répertoriés.
+                <% end %>
+            </div>
+                        
+            <div class="yui-u">
+                <p class="invitation">
+                    Vous souhaitez figurer parmi nos liens ?
+                    Contactez nous !!!
+                </p>
+            </div>
+        </div>
+        
+        <div class="yui-g">
+            <% if admin? %>
+                <p><%= link_to "+ Ajouter un nouveau lien", new_lien_path(), :class => "button_link" %></p>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+</div>
