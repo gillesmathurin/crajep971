@@ -9,7 +9,6 @@ class Mailer < ActionMailer::Base
     body :candidature => candidature
     sent_on Time.now
     charset "iso-8859-1"
-    content_type "text/html"
   end
   
   def newsletter(abonnes, newsletter)
