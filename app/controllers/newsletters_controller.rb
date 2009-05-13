@@ -4,6 +4,9 @@ class NewslettersController < ApplicationController
     
   end
   
+  def unsubscribe
+  end
+  
   # GET /newsletters
   # GET /newsletters.xml
   def index
