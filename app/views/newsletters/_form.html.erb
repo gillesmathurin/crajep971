@@ -8,6 +8,10 @@
                     <% f.fields_for :nl_contents, nl_content do |nlcontent_fields| %>
                         <table>
                             <tr>
+                                <td>Sous-titre </td>
+                                <td><%= nlcontent_fields.text_field :titre %></td>
+                            </tr>
+                            <tr>
                                 <td>Contenu : </td>
                                 <td><%= nlcontent_fields.text_area :body %></td>
                             </tr>

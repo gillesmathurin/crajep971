@@ -1,7 +1,9 @@
 class NewslettersController < ApplicationController
     
   def deliver
-    
+    call_rake(:send_newsletter, :newsletter_id => params[:id].to_i)
+    flash[:notice] = "En cours d'envoi"
+    redirect_to newsletters_url
   end
   
   def unsubscribe

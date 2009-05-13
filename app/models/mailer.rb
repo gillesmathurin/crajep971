@@ -12,4 +12,15 @@ class Mailer < ActionMailer::Base
     content_type "text/html"
   end
   
+  def newsletter(abonnes, newsletter)
+    subject "CRAJEP Lettre d'information n°#{newsletter.id}"
+    from "postmaster@crajep-temp.com"
+    body :newsletter => newsletter
+    recipients(abonnes.first.email)
+    bcc abonnes.map(&:email)
+    sent_on Time.now
+    # headers {}
+    charset 'UTF-8'
+    content_type "text/html"
+  end
 end
