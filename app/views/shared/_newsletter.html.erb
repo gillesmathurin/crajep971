@@ -2,9 +2,17 @@
     Newsletter
 </p>
 
-<%- form_for :abonne, Abonne.new, do |f| -%>
+<%- form_remote_for :abonne, Abonne.new, :url => abonnes_path(), :success => "Element.toggle('merci');", :failure => "Element.toggle('error')" do |f| -%>
     <label>Votre email :</label><br/>
     <%= f.text_field :email, :size => 20 %><br/>
     <%= submit_tag "S'inscrire" %><br/>
     <%= link_to "Se désinscrire", "", :class => "unsubscribe" %><br/><br/>
 <%- end -%>
+
+
+<div id="merci" style="display: none">
+  <p>Vous êtes maintenant inscrit, merci ! Un email de confirmation vous a été envoyé</p>
+</div>
+<div id="error" style="display: none">
+  <p>Erreurs de saisie</p>
+</div>

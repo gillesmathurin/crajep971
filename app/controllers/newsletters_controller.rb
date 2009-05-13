@@ -1,13 +1,5 @@
 class NewslettersController < ApplicationController
-  
-  def subscribe
     
-  end
-  
-  def unsubscribe
-    
-  end
-  
   def deliver
     
   end
