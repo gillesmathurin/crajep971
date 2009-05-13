@@ -32,11 +32,12 @@ class AbonnesController < ApplicationController
   
   def destroy
     @abonne = Abonne.find_by_email(params[:email])
-    @abonne.destroy
     
     respond_to do |format|
-      if request.xhr?
-        format.html { render :nothing => true }
+      if @abonne && @abonne.destroy
+        format.html { render :partial => "success" }
+      else
+        format.html { render :partial => "failure" }
       end
     end
   end

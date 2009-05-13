@@ -33,6 +33,7 @@ class NewslettersController < ApplicationController
   # GET /newsletters/new.xml
   def new
     @newsletter = Newsletter.new
+    3.times { @newsletter.nl_contents.build }
 
     respond_to do |format|
       format.html # new.html.erb

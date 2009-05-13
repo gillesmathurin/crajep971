@@ -6,7 +6,7 @@
     <label>Votre email :</label><br/>
     <%= f.text_field :email, :size => 20 %><br/>
     <%= submit_tag "S'inscrire" %><br/>
-    <%= link_to "Se désinscrire", "", :class => "unsubscribe" %><br/><br/>
+    <%= link_to "Se désinscrire", unsubscribe_newsletters_path(), :class => "unsubscribe" %><br/><br/>
 <%- end -%>
 
 

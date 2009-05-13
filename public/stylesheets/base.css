@@ -66,6 +66,17 @@ div#hd {
 
 /* @group Body */
 
+div#flash {
+	font-size: 1.2em;
+	color: yellow;
+	background-color: #504eba;
+	display: inline;
+	padding: 5px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	border: 1px solid orange;
+}
+
 div#bd {
 	background-color: white;
 	border: 1px solid silver;

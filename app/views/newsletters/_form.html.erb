@@ -1,0 +1,24 @@
+                  <p>
+                    <%= f.label :titre %><br />
+                    <%= f.text_field :titre %>
+                  </p>
+
+                  <% @newsletter.nl_contents.each do |nl_content| %>
+                  <p>
+                    <% f.fields_for :nl_contents, nl_content do |nlcontent_fields| %>
+                        <table>
+                            <tr>
+                                <td>Contenu : </td>
+                                <td><%= nlcontent_fields.text_area :body %></td>
+                            </tr>
+                            <tr>
+                                <td>Image : </td>
+                                <td><%= nlcontent_fields.file_field :image %></td>
+                            </tr>
+                        </table>
+                    <% end %>
+                  </p>
+                  <% end %>
+                  <p>
+                    <%= f.submit 'Enregistrer' %>
+                  </p>

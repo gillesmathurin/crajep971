@@ -1,6 +1,26 @@
 <div id="yui-main">
     <div class="yui-b">
         <div class="yui-g">
+            <h1 class="accroche">Désabonnement à la Newsletter</h1>
+            
+            <p>
+                <b>Saisissez votre adresse email d'abonné.</b>
+            </p>
+            
+            <p>
+                <% form_remote_tag :url => {:controller => "abonnes", :action => "destroy"}, :update => "flash",
+             :complete => visual_effect(:toggle_appear, "flash", :duration => 3) do %>
+                Email : <%= text_field_tag :email, "votre email ici", :size => 30 %>
+                <%= submit_tag "Valider" %>
+                <% end %>
+            </p>
+            
+            <!-- <%# form_tag (:controller => "abonnes", :action => "destroy") do %>
+                Email : <%# text_field_tag :email,"votreemail@example.com", :size => 30 %>
+                <%# submit_tag "Valider" %>
+            <%# end %> -->
+            <div id="flash">
+            </div>
             
         </div>
     </div>

@@ -1,20 +1,28 @@
-<h1>Editing newsletter</h1>
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1>Modifier une Newsletter</h1>
+        </div>
+        
+        <div class="yui-g">
+            <div class="yui-u first">
+                <% form_for(@newsletter) do |f| %>
+                  <%= f.error_messages %>
+                  <%= render :partial => 'form', :locals => { :f => f } %>
+                <% end %>
 
-<% form_for(@newsletter) do |f| %>
-  <%= f.error_messages %>
+                <%= link_to 'Voir', @newsletter %> |
+                <%= link_to 'Retour', newsletters_path %>
+            </div>
+            
+            <div class="yui-u">
+                <%= render :partial => "shared/edition" %>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <p>
-    <%= f.label :published_at %><br />
-    <%= f.datetime_select :published_at %>
-  </p>
-  <p>
-    <%= f.label :titre %><br />
-    <%= f.text_field :titre %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+</div>
 
-<%= link_to 'Show', @newsletter %> |
-<%= link_to 'Back', newsletters_path %>
