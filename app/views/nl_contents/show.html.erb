@@ -1,0 +1,23 @@
+<p>
+  <b>Image file name:</b>
+  <%=h @nl_content.image_file_name %>
+</p>
+
+<p>
+  <b>Image content type:</b>
+  <%=h @nl_content.image_content_type %>
+</p>
+
+<p>
+  <b>Image file size:</b>
+  <%=h @nl_content.image_file_size %>
+</p>
+
+<p>
+  <b>Image updated at:</b>
+  <%=h @nl_content.image_updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_nl_content_path(@nl_content) %> |
+<%= link_to 'Back', nl_contents_path %>

@@ -1,0 +1,20 @@
+<h1>Editing newsletter</h1>
+
+<% form_for(@newsletter) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :published_at %><br />
+    <%= f.datetime_select :published_at %>
+  </p>
+  <p>
+    <%= f.label :titre %><br />
+    <%= f.text_field :titre %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @newsletter %> |
+<%= link_to 'Back', newsletters_path %>

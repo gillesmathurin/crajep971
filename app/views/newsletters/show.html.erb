@@ -1,0 +1,13 @@
+<p>
+  <b>Published at:</b>
+  <%=h @newsletter.published_at %>
+</p>
+
+<p>
+  <b>Titre:</b>
+  <%=h @newsletter.titre %>
+</p>
+
+
+<%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
+<%= link_to 'Back', newsletters_path %>

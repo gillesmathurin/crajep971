@@ -2,9 +2,9 @@
     Newsletter
 </p>
 
-<%- form_tag '' do -%>
+<%- form_for :abonne, Abonne.new, do |f| -%>
     <label>Votre email :</label><br/>
-    <%= text_field_tag 'email', "", :size => 20 %><br/>
+    <%= f.text_field :email, :size => 20 %><br/>
     <%= submit_tag "S'inscrire" %><br/>
     <%= link_to "Se désinscrire", "", :class => "unsubscribe" %><br/><br/>
 <%- end -%>
