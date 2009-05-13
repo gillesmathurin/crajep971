@@ -7,7 +7,7 @@
         
         <div class="yui-g">
             <p class="article_photo">
-                <%= image_tag @article.photo.url(:thumb) unless @article.photo.url.empty? %>
+                <%= image_tag @article.photo.url(:thumb) if has_photo?(@article) %>
             </p>        
             <p>
                 <%= format_text(@article.body) %>
@@ -52,4 +52,7 @@
 
 <div class="yui-b sidebar">
     <%= render :partial => "shared/login" %>
+    <%= render :partial => "shared/newsletter" %>
+    
+    <%= render :partial => 'admin' %>
 </div>

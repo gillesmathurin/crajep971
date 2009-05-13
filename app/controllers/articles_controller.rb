@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_filter :admin_login_required, :only => [:new, :edit, :destroy]
   
   def index
     @articles = Article.of_the_month(:order => 'created_at desc')
@@ -26,6 +27,7 @@ class ArticlesController < ApplicationController
   
   def create
     @article = Article.new(params[:article])
+    @article.author = current_user
     
     respond_to do |format|
       if @article.save

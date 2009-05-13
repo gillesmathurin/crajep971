@@ -1,0 +1,7 @@
+    <% if admin? %>
+        <h3 class="menuadmin">Administration</h3>
+        <%= link_to "Créer une catégorie d'action", new_categorie_action_path(), :class => "button_link" %><br/><br/>
+        <% if @categorie %>
+        <%= link_to "Ajouter une action", new_categorie_action_action_path(@categorie), :class => "button_link" %>
+        <% end %>
+    <% end %>
