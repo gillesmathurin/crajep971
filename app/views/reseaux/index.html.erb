@@ -23,6 +23,18 @@
                         
                     </p>
                 <% end %>
+                <% @membres.each do |membre| %>
+                    <p>
+                        <span class="nom_membre"><%= membre.nom.capitalize %></span><br/>
+                        <span class="coor_membre"><%= membre.adresse %> <%= membre.cp %> <%= membre.ville %></span>
+                    </p>
+                    <p>
+                        <% unless membre.description.blank? %>
+                        <strong>Objet :</strong> <%= truncate(membre.description, :length => 200) %><br/>
+                        <% end %>
+                        <%= link_to "Plus d'infos", membre_path(membre) %>
+                    </p>
+                <% end %>
             </div>
             
             <div class="yui-u">

@@ -3,7 +3,7 @@ class ReseauxController < ApplicationController
   def index
     begin
       @associations = Association.find_the_crajep_ones
-    rescue ActiveResource::ResourceNotFound, ActiveResource::ServerError
+    rescue ActiveResource::ResourceNotFound, ActiveResource::ServerError, ActiveResource::ConnectionError
       redirect_to :action => 'not_found'
     end
     @membres = Membre.all
@@ -15,6 +15,7 @@ class ReseauxController < ApplicationController
   end
   
   def not_found
+    @membres = Membre.all
   end
 
   def show

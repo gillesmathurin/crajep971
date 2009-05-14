@@ -1,0 +1,48 @@
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1 class="accroche">LE RESEAU CRAJEP 971</h1>
+        </div>
+        
+        <div class="yui-gc">
+            
+            <div class="yui-u first">
+                <h3 class="green">Les associations membres</h3>
+                
+                <% @membres.each do |membre| %>
+                    <p>
+                        <span class="nom_membre"><%= membre.nom.capitalize %></span><br/>
+                        <span class="coor_membre"><%= membre.adresse %> <%= membre.cp %> <%= membre.ville %></span>
+                    </p>
+                    <p>
+                        <% unless membre.description.blank? %>
+                        <strong>Objet :</strong> <%= truncate(membre.description, :length => 200) %><br/>
+                        <% end %>
+                        <%= link_to "Plus d'infos", membre_path(membre) %>
+                    </p>
+                <% end %>
+            </div>
+            
+            <div class="yui-u">
+                <h3 class="red">Devenez membre du réseau</h3>
+                <p class="button">
+                    <%= link_to ">> Formulaire d'adhésion", new_candidature_path(), :class => "big_button" %>
+                </p>
+                <p>
+                    En devenant membre du réseau, vous aurez accès aux ressources documentaires, participerez aux actions et réunions etc …
+                </p>
+                <p><%= Faker::Lorem.paragraphs(1) %></p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+    <%= render :partial => "shared/newsletter" %>
+    
+    <% if admin? %>
+        <%= link_to "Ajouter un membre", new_membre_path(), :class => "button_link" %>
+    <% end %>
+</div>
