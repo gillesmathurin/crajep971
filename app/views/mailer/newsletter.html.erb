@@ -67,7 +67,7 @@
         <b><%= nl_content.titre %></b>
       </p>
       <p class="article">
-        <%= format_text(nl_content.body) %><br/>
+        <%= RedCloth.new(nl_content.body).to_html %><br/>
       </p>
     <% end %>
   </div>

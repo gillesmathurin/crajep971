@@ -1,22 +1,31 @@
-<h1>Listing newsletters</h1>
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1 class="accroche">Listing newsletters</h1>
 
-<table>
-  <tr>
-    <th>Published at</th>
-    <th>Titre</th>
-  </tr>
+            <table>
+              <tr>
+                <th>Titre</th>
+                <th>Publiée le</th>
+              </tr>
 
-<% @newsletters.each do |newsletter| %>
-  <tr>
-    <td><%=h newsletter.published_at %></td>
-    <td><%=h newsletter.titre %></td>
-    <td><%= link_to 'Show', newsletter %></td>
-    <td><%= link_to 'Edit', edit_newsletter_path(newsletter) %></td>
-    <td><%= link_to 'Destroy', newsletter, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+            <% @newsletters.each do |newsletter| %>
+              <tr>
+                <td><%=h newsletter.titre %></td>
+                <td><%=h I18n.l newsletter.published_at if newsletter.published_at %></td>
+                <td><%= link_to "Envoyer", deliver_newsletter_path(newsletter) %></td>
+                <td><%= link_to 'Voir', newsletter %></td>
+                <td><%= link_to 'Modifier', edit_newsletter_path(newsletter) %></td>
+                <td><%= link_to 'Supprimer', newsletter, :confirm => 'En êtes vous sure ?', :method => :delete %></td>
+              </tr>
+            <% end %>
+            </table>
+        </div>
+    </div>
+</div>
 
-<br />
-
-<%= link_to 'New newsletter', new_newsletter_path %>
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+    <%= render :partial => "shared/newsletter" %>
+    <%= render :partial => "shared/gestion_newsletter" %>
+</div>

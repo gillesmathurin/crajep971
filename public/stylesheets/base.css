@@ -166,6 +166,14 @@ h3.menuadmin {
 	text-indent: 5px;
 }
 
+h3.admin_newsletter {
+	color: #788e9d;
+	text-decoration: underline;
+	text-align: left;
+	text-indent: 0;
+	font-size: 0.9em;
+}
+
 p.login {
 	margin-bottom: 10px;
 	text-align: center;

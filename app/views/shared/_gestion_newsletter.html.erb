@@ -1,0 +1,6 @@
+<% if admin? %>
+    <h3 class="admin_newsletter">Administration newsletter</h3>
+    <%= link_to "Rédiger une newsletter", new_newsletter_path(), :class => "button_link" %><br/><br/>
+    <%= link_to "Listing des Newsletter", newsletters_path(), :class => "button_link" %><br/><br/>
+    <%= link_to "Voir Liste Abonnés", abonnes_path(), :class => "button_link" %>
+<% end %>

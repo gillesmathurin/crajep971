@@ -1,13 +1,37 @@
-<p>
-  <b>Published at:</b>
-  <%=h @newsletter.published_at %>
-</p>
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1 class="accroche">Newsletter n°<%= @newsletter.id %></h1>
+            <p>
+              <b>Publiée le:</b>
+              <%=h @newsletter.published_at %>
+            </p>
 
-<p>
-  <b>Titre:</b>
-  <%=h @newsletter.titre %>
-</p>
+            <p>
+              <b>Titre:</b>
+              <%=h @newsletter.titre %>
+            </p>
+            <% @newsletter.nl_contents.each do |content| %>
+                <p>
+                    <%= content.titre %>
+                </p>
+                <p>
+                    <%= format_text(content.body) %>
+                </p>
+            <% end %> 
+            
+            <p>
+                <% if admin? %>
+                    <%= link_to "Supprimer", newsletter_path(@newsletter), :method => :delete, :class => "button_link2" %>
+                <% end %>
+                <%= link_to "Retour", newsletters_path(), :class => "button_link" %>
+            </p>
+        </div>
+        
+    </div>
+</div>
 
-
-<%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
-<%= link_to 'Back', newsletters_path %>
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+    <%= render :partial => "shared/gestion_newsletter" %>
+</div>

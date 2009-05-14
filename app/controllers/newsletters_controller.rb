@@ -1,4 +1,5 @@
 class NewslettersController < ApplicationController
+  uses_tiny_mce
     
   def deliver
     call_rake(:send_newsletter, :newsletter_id => params[:id].to_i)
