@@ -281,12 +281,11 @@ a.liste_lien {
 }
 
 div.comment {
-	border-left: 3px solid gray;
-	margin-bottom: 10px;
+	border-left: 5px solid #aecfe5;
+	margin-bottom: 15px;
 	margin-top: 10px;
 	padding-left: 5px;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
+	border-bottom: 1px solid #e3d6e5;
 }
 
 span.nom_membre {
