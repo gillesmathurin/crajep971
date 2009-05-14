@@ -12,6 +12,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :actions
   
   map.resources :articles, :has_many => :comments
+  map.articles_du_jour '/articles_du_jour/:day', :controller => 'articles', :action => 'articles_du_jour', :day => nil
+  map.articles_du_mois '/articles_du_mois/:day', :controller => 'articles', :action => 'articles_du_mois', :day => nil
   
   map.resources :comments
   

@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   uses_tiny_mce :options => { :theme => 'simple' }
   
   def index
-    @articles = Article.of_the_month(:order => 'created_at desc')
+    @articles = Article.of_the_month
     
     respond_to do |format|
       format.html {  }
@@ -12,6 +12,22 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    
+    respond_to do |format|
+      format.html {  }
+    end
+  end
+  
+  def articles_du_jour
+    @articles = Article.du_jour(params[:day])
+    
+    respond_to do |format|
+      format.html { render :action => "index" }
+    end
+  end
+  
+  def articles_du_mois
+    @articles = Article.of_the_given_month(params[:day].to_time)
     
     respond_to do |format|
       format.html {  }

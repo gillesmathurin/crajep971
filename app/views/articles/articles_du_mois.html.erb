@@ -27,7 +27,7 @@
             
             <div class="yui-u">
                 <h3 class="red">Archives</h3>
-                <% @date = Date.today %>
+                <% @date = params[:day].to_date %>
 
                 <%= calendar_for(@date.year, @date.month, :next_and_previous_month => [ "%b", lambda { |@date| articles_du_mois_path(@date) }], &articles_proc) %>
             </div>
