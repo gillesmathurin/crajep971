@@ -20,7 +20,7 @@
                     <p><%= format_text(cat.theme) %></p>
                     
                     <% if !cat.actions.blank? %>
-                    <p>Les 3 dernières actions</p>
+                    <p class="en-tete">Les 3 dernières actions</p>
                     <ul>
                       <% for action in cat.actions.last_3 %>
                         <li><%= action.nom %> : <%= truncate(action.description, :length => 30) %></li>

@@ -128,6 +128,13 @@ p.button {
 	text-align: left;
 }
 
+p.en-tete {
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #875873;
+	text-decoration: underline;
+}
+
 div.yui-g {
 	margin-bottom: 10px;
 }
