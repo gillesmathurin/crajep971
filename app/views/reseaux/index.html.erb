@@ -43,4 +43,8 @@
 <div class="yui-b sidebar">
     <%= render :partial => "shared/login" %>
     <%= render :partial => "shared/newsletter" %>
+    
+    <% if admin? %>
+        <%= link_to "Ajouter un membre", new_membre_path(), :class => "button_link" %>
+    <% end %>
 </div>

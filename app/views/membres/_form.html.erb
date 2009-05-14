@@ -1,0 +1,42 @@
+              <table>
+                <tr>
+                    <td><%= f.label :nom, "Nom" %></td>
+                    <td><%= f.text_field :nom %></td>
+                </tr>
+                <tr>
+                    <td><%= f.label :adresse, "Adresse" %></td>
+                    <td><%= f.text_field :adresse %></td>
+                </tr>
+                <tr>
+                    <td><%= f.label :cp, "Code Postal" %></td>
+                    <td><%= f.text_field :cp %></td>
+                </tr>
+                <tr>
+                    <td><%= f.label :ville, "Ville" %></td>
+                    <td><%= f.text_field :ville %> </td>
+                </tr>
+                <tr>
+                    <td><%= f.label :tel, "Telephone" %></td>
+                    <td><%= f.text_field :tel %> </td>
+                </tr>
+                <tr>
+                    <td><%= f.label :fax, "Fax" %> </td>
+                    <td><%= f.text_field :fax %></td>
+                </tr>
+                <tr>
+                    <td><%= f.label :weburl, "Url site web" %></td>
+                    <td><%= f.text_field :weburl %></td>
+                </tr>
+                <tr>
+                    <td><%= f.label :email, "Email" %></td>
+                    <td><%= f.text_field :email %></td>
+                </tr>
+                <tr>
+                    <td><%= f.label :description, "Description" %></td>
+                    <td><%= f.text_area :description, :class => "mceEditor" %></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><%= submit_tag "Enregistrer" %></td>
+                </tr>
+              </table>

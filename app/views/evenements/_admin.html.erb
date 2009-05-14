@@ -1,0 +1,4 @@
+<% if admin? %>
+        <h3 class="menuadmin">Administration</h3>
+        <%= link_to " (+) Ajouter un Evénement", new_evenement_path(), :class => "button_link" %>
+    <%- end -%>

@@ -6,11 +6,11 @@ class ReseauxController < ApplicationController
     rescue ActiveResource::ResourceNotFound, ActiveResource::ServerError
       redirect_to :action => 'not_found'
     end
-    # @membres = Membre.all
+    @membres = Membre.all
     
     respond_to do |format|
       format.html {  }
-      # format.xml { render :xml => { @associations.to_xml, @membres.to_xml } }
+      format.xml { render :xml => { @associations.to_xml, @membres.to_xml } }
     end
   end
   
