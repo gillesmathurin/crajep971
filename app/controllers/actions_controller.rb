@@ -1,6 +1,7 @@
 class ActionsController < ApplicationController
   before_filter :find_categorie_actions
   before_filter :admin_login_required, :only => [:new, :edit, :destroy]
+  uses_tiny_mce :options => { :theme => 'simple' }
   
   # GET /actions
   # GET /actions.xml

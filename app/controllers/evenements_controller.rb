@@ -1,5 +1,6 @@
 class EvenementsController < ApplicationController
   before_filter :login_required, :only => [:new, :edit, :destroy]
+  uses_tiny_mce :options => { :theme => 'simple' }
   
   def index
     @evenements = Evenement.of_the_month

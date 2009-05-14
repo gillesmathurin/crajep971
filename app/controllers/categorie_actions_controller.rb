@@ -1,5 +1,5 @@
 class CategorieActionsController < ApplicationController
-
+  uses_tiny_mce :options => { :theme => 'simple'}
   before_filter :admin_login_required, :only => [:new, :edit, :destroy]
   
   def index
