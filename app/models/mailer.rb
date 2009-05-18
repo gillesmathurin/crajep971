@@ -5,7 +5,7 @@ class Mailer < ActionMailer::Base
     subject "Demande d'adhésion"
     from "postmaster@crajep-temp.com"
     recipients "gillesmath@me.com"
-    cc ['agouti4@wanadoo.fr', 'gilbert.sacile@orange.fr', 'bruno.benony@gmail.com' ]
+    cc ['agouti4@wanadoo.fr', 'gilbert.sacile@orange.fr', 'bruno.benony@gmail.com', 'crajep971@orange.fr' ]
     body :candidature => candidature
     sent_on Time.now
     charset "iso-8859-1"
@@ -21,5 +21,15 @@ class Mailer < ActionMailer::Base
     # headers {}
     charset 'UTF-8'
     content_type "text/html"
+  end
+  
+  def confirm_newsletter_sub(abonne)
+    @subject = "Confirmation de votre abonnement à notre newsletter"
+    @body = { "abonne" => abonne }
+    from "postmaster@guadeloupe-asso.fr"
+    @recipients = abonne.email_abonne
+    @sent_on = Time.now
+    @header = {}
+    @charset = 'UTF-8'
   end
 end

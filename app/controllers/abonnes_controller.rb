@@ -23,6 +23,7 @@ class AbonnesController < ApplicationController
     
     respond_to do |format|
       if @abonne.save && request.xhr?
+        Mailer.deliver_confirm_newsletter_sub(@abonne)
         format.html { render :nothing => true }
       elsif request.xhr?
         format.html { render :nothing => true }
