@@ -15,7 +15,7 @@ class Mailer < ActionMailer::Base
     subject "CRAJEP Lettre d'information n°#{newsletter.id}"
     from "postmaster@crajep-temp.com"
     body :newsletter => newsletter
-    recipients(abonnes.first.email)
+    recipients(abonnes.last.email)
     bcc abonnes.map(&:email)
     sent_on Time.now
     # headers {}
@@ -27,7 +27,7 @@ class Mailer < ActionMailer::Base
     @subject = "Confirmation de votre abonnement à notre newsletter"
     @body = { "abonne" => abonne }
     from "postmaster@guadeloupe-asso.fr"
-    @recipients = abonne.email_abonne
+    @recipients = abonne.email
     @sent_on = Time.now
     @header = {}
     @charset = 'UTF-8'

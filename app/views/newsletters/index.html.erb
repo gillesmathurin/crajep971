@@ -12,7 +12,7 @@
             <% @newsletters.each do |newsletter| %>
               <tr>
                 <td><%=h newsletter.titre %></td>
-                <td><%=h I18n.l newsletter.published_at if newsletter.published_at %></td>
+                <td><%=h I18n.l(newsletter.published_at) if newsletter.published_at %></td>
                 <td><%= link_to "Envoyer", deliver_newsletter_path(newsletter) %></td>
                 <td><%= link_to 'Voir', newsletter %></td>
                 <td><%= link_to 'Modifier', edit_newsletter_path(newsletter) %></td>
