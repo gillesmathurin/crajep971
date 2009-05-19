@@ -1,2 +1,32 @@
-<h1>Abonnes#index</h1>
-<p>Find me in app/views/abonnes/index.html.erb</p>
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1 class="accroche">Listing des abonnés à la Newsletter</h1>
+        </div>
+        
+        <div class="yui-g">
+            <table>
+                 <tr>
+                     <th>Email Abonné</th>
+                     <th>Actions</th>
+                 </tr>
+            <% @abonnes.each do |abonne| %>
+                <tr>
+                    <td><%= abonne.email %></td>
+                    <td>
+                        <%= link_to "Supprimer", abonne_path(abonne), :method => "delete",
+                         :confirm => "En êtes vous sur ?" %>
+                    </td>
+                </tr>
+            <% end %>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+    <%= render :partial => "shared/newsletter" %>
+    <%= render :partial => "shared/gestion_newsletter" %>
+    <%= render :partial => "shared/logos" %>
+</div>
