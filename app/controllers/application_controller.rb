@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
   def call_rake(task, options = {})
     options[:rails_env] ||= RAILS_ENV
     args = options.map do |n,v|
