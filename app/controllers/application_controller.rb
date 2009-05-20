@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
       end
     end
     
-    # system "/usr/bin/rake #{task} #{args.join(' ')} --trace 2>&1 >> #{RAILS_ROOT}/log/rake.log &"
-    system "usr/local/bin/rake #{task} #{args.join(' ')} --trace 2>&1 >> #{RAILS_ROOT}/log/rake.log &"
+    system "/usr/bin/rake #{task} #{args.join(' ')} --trace 2>&1 >> #{RAILS_ROOT}/log/rake.log &"
+    # system "usr/local/bin/rake #{task} #{args.join(' ')} --trace 2>&1 >> #{RAILS_ROOT}/log/rake.log &"
   end
 end

@@ -14,13 +14,13 @@ class Mailer < ActionMailer::Base
   def newsletter(abonnes, newsletter)
     subject "CRAJEP Lettre d'information n°#{newsletter.id}"
     from "postmaster@crajep-temp.com"
-    body :newsletter => newsletter
-    recipients(abonnes.last.email)
-    bcc abonnes.map(&:email)
+    recipients abonnes.last.email)
+    cc abonnes abonnes.map(&:email)
     sent_on Time.now
-    # headers {}
+    headers {}
     charset 'UTF-8'
     content_type "text/html"
+    body :newsletter => newsletter
   end
   
   def confirm_newsletter_sub(abonne)
