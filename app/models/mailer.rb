@@ -14,7 +14,7 @@ class Mailer < ActionMailer::Base
   def newsletter(abonnes, newsletter)
     subject "CRAJEP Lettre d'information n°#{newsletter.id}"
     from "postmaster@crajep-temp.com"
-    recipients abonnes.last.email)
+    recipients abonnes.last.email
     cc abonnes abonnes.map(&:email)
     sent_on Time.now
     headers {}
