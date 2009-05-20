@@ -1,5 +1,6 @@
 class Evenement < ActiveRecord::Base
-  named_scope :of_the_month, :conditions => ['date between ? and ?', Date.today.beginning_of_month, Date.today.end_of_month]  
+  default_scope :order => 'date desc'
+  named_scope :of_the_month, :conditions => ['date between ? and ?', Date.today.beginning_of_month, Date.today.end_of_month]
   named_scope :of_the_given_month, lambda { |*args| { :conditions => ['date between ? and ?', args.first, args.first.end_of_month] } }
   
   has_attached_file :photo, :styles => { :thumb => "100x100>" }

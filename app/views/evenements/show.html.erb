@@ -3,7 +3,8 @@
         <div class="yui-g">
             <h1 class="accroche"><%= @evenement.titre %></h1>
             <p>
-                <b>Date :</b><%= I18n.l @evenement.date %> | <b>Lieu :</b><%= @evenement.lieu %>
+                <b>Date :</b><%= I18n.l @evenement.date %> | <b>Lieu :</b><%= @evenement.lieu %><br/>
+                <b>De :</b> <%= @evenement.hdebut.strftime("%H:%M") if @evenement.hdebut %> <b>À :</b> <%= @evenement.hfin.strftime("%H:%M") if @evenement.hfin %>
             </p>
         </div>
         
