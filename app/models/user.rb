@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
   validates_length_of       :email,    :within => 6..100 #r@a.wk
   validates_uniqueness_of   :email
   validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
+  
+  validates_presence_of     :categorie, :on => :create, :message => "doit être renseigné."
 
   
 
@@ -30,7 +32,7 @@ class User < ActiveRecord::Base
   attr_accessible :login, :email, :name, :password, :password_confirmation, :categorie, :state # comment out categorie and state for production
 
   CATEGORIES = [["Super Administrateur", 0], ["Administrateur", 1],
-  ["Animateur", 2], ["Consultant", 3]]
+  ["Membre", 2], ["Consultant", 3]]
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   #
