@@ -2,7 +2,7 @@ class NewslettersController < ApplicationController
   uses_tiny_mce
     
   def deliver
-    call_rake(:send_newsletter, :newsletter_id => params[:id].to_i)
+    call_rake(:send_newsletter, :newsletter_id => params[:id])
     flash[:notice] = "En cours d'envoi"
     redirect_to newsletters_url
   end

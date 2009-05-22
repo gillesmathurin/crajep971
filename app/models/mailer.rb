@@ -4,8 +4,8 @@ class Mailer < ActionMailer::Base
   def candidature(candidature)
     subject "Demande d'adhésion"
     from "postmaster@crajep-temp.com"
-    recipients "gillesmath@me.com"
-    cc ['agouti4@wanadoo.fr', 'gilbert.sacile@orange.fr', 'bruno.benony@gmail.com', 'crajep971@orange.fr' ]
+    recipients "crajep971@orange.fr"
+    cc ['agouti4@wanadoo.fr', 'gilbert.sacile@orange.fr', 'bruno.benony@gmail.com', 'gillesmath@me.com' ]
     body :candidature => candidature
     sent_on Time.now
     charset "iso-8859-1"
@@ -14,8 +14,8 @@ class Mailer < ActionMailer::Base
   def newsletter(abonnes, newsletter)
     subject "CRAJEP Lettre d'information n°#{newsletter.id}"
     from "postmaster@crajep-temp.com"
-    recipients abonnes.last.email
-    cc abonnes abonnes.map(&:email)
+    recipients(abonnes.last.email)
+    cc(abonnes.map(&:email))
     sent_on Time.now
     headers {}
     charset 'UTF-8'
