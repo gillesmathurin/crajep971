@@ -33,6 +33,19 @@ class User < ActiveRecord::Base
 
   CATEGORIES = [["Super Administrateur", 0], ["Administrateur", 1],
   ["Membre", 2], ["Consultant", 3]]
+  
+  def categorie_to_s
+    case categorie
+    when "0"
+      return "Super Administrateur"
+    when "1"
+      return "Administrateur"
+    when "2"
+      return "Membre"
+    when "3"
+      return "Consultant"
+    end
+  end
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   #
