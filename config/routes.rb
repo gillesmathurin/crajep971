@@ -23,6 +23,8 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :reseaux
   
+  map.resources :cpte_rendus
+  
   map.resources :membres
   
   map.evenenemts_du_jour '/evenements_du_jour/:day', :controller => 'evenements', :action => 'evenenemts_du_jour', :day => nil

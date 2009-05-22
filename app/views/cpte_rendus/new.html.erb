@@ -1,2 +1,23 @@
-<h1>CpteRendus#new</h1>
-<p>Find me in app/views/cpte_rendus/new.html.erb</p>
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1 class="accroche">Enregistrez un Compte Rendu</h1>
+        </div>
+        
+        <div class="yui-g">
+            <%= error_messages_for :cpte_rendu %>
+
+            <% form_for @cpte_rendu, :html => { :multipart => true } do |f| -%>
+                <%= render :partial => 'form', :locals => {:f => f} %>
+            <% end -%>
+        </div>
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+    <%= render :partial => "shared/newsletter" %>
+    <%= render :partial => "admin" %>
+    <%= render :partial => "shared/gestion_newsletter" %>
+    <%= render :partial => "shared/logos" %>
+</div>

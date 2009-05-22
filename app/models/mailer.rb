@@ -34,15 +34,30 @@ class Mailer < ActionMailer::Base
     @charset = 'UTF-8'
   end
   
-  def cpterendu_notification(cpte_rendu, email_array)
+  def cpterendu_notification(cpte_rendu, emails)
     subject "Nouveau Compte rendu de réunion"
     from "postmaster@crajep_temp.com"
-    recipients email_array
-    part "text/plain" do |p|
-      p.body = render_message("cpterendu_notification_plain", :cpte_rendu => cpte_rendu)
-    end
+    recipients emails 
+    body :cpte_rendu => cpte_rendu
     sent_on Time.now
     charset "iso-8859-1"
-    attachment :content_type => "application/msword", :body => File.read(cpte_rendu.document.url)
   end
+  
+  # private
+  # 
+  # def prepare_recipients_for_cpterendu
+  #   email_array = []
+  #   # Fetch the Crajep associations emails
+  #   associations = Association.find_the_crajep_ones
+  #   associations.each do |asso|
+  #     email_array << asso.email
+  #   end
+  #   # Fetch the Membre emails
+  #   membres = Membre.all(:select => "email")
+  #   membres.each do |membre|
+  #     email_array << membre.email
+  #   end
+  #   return email_array
+  # end
+  
 end

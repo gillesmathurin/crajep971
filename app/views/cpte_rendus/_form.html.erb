@@ -1,0 +1,17 @@
+            <table>
+                <tr>
+                    <td><%= f.label :titre, "Titre" %><br/></td>
+                    <td><%= f.text_field :titre %></td>
+                </tr>
+                <tr>
+                    <td><%= f.label :body, "Description" %></td>
+                    <td><%= f.text_area :body, :rows => 10, :cols => 30, :class => "mceEditor" %></td>
+                </tr>
+                <tr>
+                    <td><%= f.label :document, "Document Joint" %></td>
+                    <td><%= f.file_field :document %></td>
+                </tr>
+            </table>
+            <p>
+                <%= submit_tag "Enregistrer" %>
+             </p>              

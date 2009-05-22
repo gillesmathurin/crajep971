@@ -40,7 +40,7 @@ module AuthenticatedSystem
     end
     
     def member?
-      logged_in? && current_user.categorie == "2"
+      logged_in? && (current_user.categorie == "0" || current_user.categorie == "1" || current_user.categorie == "2")
     end
 
     # Filter method to enforce a login requirement.

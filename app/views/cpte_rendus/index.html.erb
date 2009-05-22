@@ -1,2 +1,32 @@
-<h1>CpteRendus#index</h1>
-<p>Find me in app/views/cpte_rendus/index.html.erb</p>
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1 class="accroche">Liste des Compte Rendus</h1>
+        </div>
+        
+        <div class="yui-g">
+            <% @cpte_rendus.each do |c| %>
+                <p>
+                    <b><%= c.titre %></b><br/>
+                    <%= c.body %><br/>
+                    <%= link_to "Télécharger moi.", c.document.url %>
+                </p>
+                
+                <p>
+                    <% if admin? %>
+                        <%= link_to "Modifier", edit_cpte_rendu_path(c), :class => "button_link2" %> |
+                        <%= link_to "Supprimer", cpte_rendu_path(c), :method => :delete, :confirm => "En êtes vous sur ?", :class => "button_link2" %>
+                    <% end %>
+                </p>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+    <%= render :partial => "shared/newsletter" %>
+    <%= render :partial => "admin" %>
+    <%= render :partial => "shared/gestion_newsletter" %>
+    <%= render :partial => "shared/logos" %>
+</div>
