@@ -1,4 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
+  
+  map.resources :home
+  map.accueil '/accueil', :controller => 'home', :action => 'index'
+  map.contacts '/contacts', :controller => 'home', :action => 'contacts'
+  
   map.resources :nl_contents
 
   map.resources :newsletters, :member => { :deliver => :get }, :collection => {:unsubscribe => :get}
@@ -38,6 +43,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete }
 
   map.resource :session
+  
+  map.root :controller => 'home', :action => 'index'
 
   # The priority is based upon order of creation: first created -> highest priority.
 
