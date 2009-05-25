@@ -9,7 +9,7 @@
                 <p>
                     <b><%= c.titre %></b><br/>
                     <%= c.body %><br/>
-                    <%= link_to "Télécharger moi.", c.document.url %>
+                    <%= link_to "Télécharger moi.", download_cpte_rendu_path(c) %>
                 </p>
                 
                 <p>

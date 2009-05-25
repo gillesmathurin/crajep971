@@ -53,7 +53,11 @@ class CpteRendusController < ApplicationController
     end
   end
   
-  def deliver
-    
+  def download
+    @cpte_rendu = CpteRendu.find(params[:id])
+    send_file @cpte_rendu.document.url(:original, false),
+     :filename => @cpte_rendu.document.original_filename,
+     :type => @cpte_rendu.document.content_type,
+     :disposition => 'attachment'
   end
 end

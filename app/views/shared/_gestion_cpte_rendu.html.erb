@@ -1,0 +1,5 @@
+<% if admin? %>
+    <h3 class="admin_newsletter">Gestion des compte-rendus</h3>
+    <%= link_to "Listing Compte rendu", cpte_rendus_path(), :class => "button_link" %><br/><br/>
+    <%= link_to "Ajouter un compte rendu", new_cpte_rendu_path(), :class => "button_link" %>
+<% end %>
