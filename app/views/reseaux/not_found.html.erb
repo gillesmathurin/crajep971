@@ -7,31 +7,38 @@
         <div class="yui-gc">
             
             <div class="yui-u first">
-                <h3 class="green">Les associations membres</h3>
-                
-                <% @membres.each do |membre| %>
-                    <p>
-                        <span class="nom_membre"><%= membre.nom.capitalize %></span><br/>
-                        <span class="coor_membre"><%= membre.adresse %> <%= membre.cp %> <%= membre.ville %></span>
-                    </p>
-                    <p>
-                        <% unless membre.description.blank? %>
-                        <strong>Objet :</strong> <%= truncate(membre.description, :length => 200) %><br/>
-                        <% end %>
-                        <%= link_to "Plus d'infos", membre_path(membre) %>
-                    </p>
-                <% end %>
-            </div>
-            
-            <div class="yui-u">
-                <h3 class="red">Devenez membre du réseau</h3>
+                <h3 class="red">Adhérez au CRAJEP</h3>
                 <p class="button">
                     <%= link_to ">> Formulaire d'adhésion", new_candidature_path(), :class => "big_button" %>
                 </p>
                 <p>
-                    En devenant membre du réseau, vous aurez accès aux ressources documentaires, participerez aux actions et réunions etc …
+                    Rejoignez les commissions pour faire avancer les dossiers !<br/>
+                    Participez à la défense des valeurs de l’Education Populaire !
                 </p>
-                <p><%= Faker::Lorem.paragraphs(1) %></p>
+                <p>
+                    Revendiquer la reconnaissance du rôle des associations et de leurs militants            bénévoles comme facteur de développement de la  démocratie.</p>
+                    <p>Agir pour défendre, renforcer, promouvoir les conquêtes sociales déterminantes en      matière d’Enfance, de Jeunesse et d’Education Populaire.</p>
+                    <p>Prendre en compte et exprimer les préoccupations des enfants, des jeunes et des    adultes.</p>
+                    <p>Participer à toutes concertations visant à l’élaboration des décisions qui concernent ses champs de compétence.</p>
+                    <p>Défendre ses positions et ses préoccupations auprès des instances internationales, qu’elles soient de  type multilatéral ou bilatéral, intergouvernemental ou privé.</p>
+                    <p>Lutter contre toute discrimination sexiste, sociale, raciale, religieuse et de        nationalité.</p>
+                    <p>Promouvoir la paix, la laïcité, la solidarité et l’amitié entre les enfants et les jeunes de tous les peuples.</p>
+
+                <p>
+                    Peuvent être membres du CRAJEP :<br/>
+                </p>
+                
+                <p>
+                    <b>Les associations déclarées de jeunesse et d'éducation populaire, de caractère régional.</b> <br/>Chacun des membres doit avoir un fonctionnement démocratique, se reconnaître dans la motion d'orientation adoptée tous les quatre ans et accepter le paiement d'une cotisation au terme et à la valeur fixée par l'Assemblée Générale. L'adhésion implique le respect des règles de fonctionnement. Instruite par le Comité Exécutif, chaque demande d'adhésion est soumise à l’acceptation de l'Assemblée Générale.
+                </p>
+                <p>
+                    <b>Les organisations de Jeunesse, politiques, syndicales et étudiantes, de caractère régional ont le statut de membres associés.</b><br/>
+                    Le statut de membre associé permet de prendre part aux travaux du CRAJEP (commissions de travail, diverses manifestations …) et de disposer d'un statut d'observateur permanent aux Assemblées Générales du CRAJEP.
+                </p>
+                
+                <p>
+                    Pour en savoir plus :<br/> <%= link_to "Téléchargez notre charte de fonctionnement", "/public/charte.pdf" %>
+                </p>
             </div>
             
         </div>
