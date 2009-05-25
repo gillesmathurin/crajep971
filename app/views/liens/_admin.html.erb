@@ -1,0 +1,4 @@
+<% if admin? %>
+    <h3 class="menuadmin">Administration</h3>
+    <%= link_to "Ajouter un nouveau lien", new_lien_path(), :class => "button_link" %>
+<% end %>

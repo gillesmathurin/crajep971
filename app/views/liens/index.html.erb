@@ -2,9 +2,6 @@
     <div class="yui-b">
         <div class="yui-g">
             <h1 class="accroche">Nos liens</h1>
-            <% if admin? %>
-                <p><%= link_to "+ Ajouter un nouveau lien", new_lien_path(), :class => "button_link" %></p>
-            <% end %>
         </div>
         
         <div class="yui-gc">
@@ -34,17 +31,13 @@
                 </p>
             </div>
         </div>
-        
-        <div class="yui-g">
-            <% if admin? %>
-                <p><%= link_to "+ Ajouter un nouveau lien", new_lien_path(), :class => "button_link" %></p>
-            <% end %>
-        </div>
     </div>
 </div>
 
 <div class="yui-b sidebar">
     <%= render :partial => "shared/login" %>
     <%= render :partial => "shared/newsletter" %>
+    <%= render :partial => "admin" %>
+    <%= render :partial => "shared/gestion_newsletter" %>
     <%= render :partial => "shared/logos" %>
 </div>
