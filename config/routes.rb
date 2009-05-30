@@ -44,7 +44,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :session
   
-  map.root :controller => 'home', :action => 'index'
+  # map.root :controller => 'home', :action => 'index'
+  map.root "/public/system/maintenance.html"
 
   # The priority is based upon order of creation: first created -> highest priority.
 
