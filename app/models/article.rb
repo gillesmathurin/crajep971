@@ -12,7 +12,6 @@ class Article < ActiveRecord::Base
   
   named_scope :du_jour, lambda { |day| { :conditions => ['created_at between ? and ?', day.to_time.beginning_of_day, day.to_time.end_of_day] } }
   
-  
   def self.has_events_on?(day)
     if find(:all, :conditions => ['created_at between ? and ?', day.to_time.beginning_of_day, day.to_time.end_of_day]).empty?
       return false

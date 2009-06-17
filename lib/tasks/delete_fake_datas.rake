@@ -5,4 +5,5 @@ task :delete_fake_datas => :environment do
   Article.delete_all
   Evenement.delete_all
   Lien.delete_all
+  Comment.delete_all
 end
