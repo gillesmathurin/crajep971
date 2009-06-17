@@ -3,6 +3,7 @@
 
 class ApplicationController < ActionController::Base
   include MaintenanceMode
+  include ExceptionNotifiable
   before_filter :disabled?
   
   helper :all # include all helpers, all the time
