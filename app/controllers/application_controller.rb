@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   local_addresses.clear
-  
+    
   private
   
   def call_rake(task, options = {})
