@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :home
   map.accueil '/accueil', :controller => 'home', :action => 'index'
   map.contacts '/contacts', :controller => 'home', :action => 'contacts'
+  map.errors '/errors', :controller => 'home', :action => 'exception_notifier'
   
   map.resources :nl_contents
 
