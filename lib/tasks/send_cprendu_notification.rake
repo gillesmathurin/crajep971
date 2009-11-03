@@ -13,7 +13,6 @@ task :send_cprendu_notification => :environment do
      ActiveResource::ConnectionError, SocketError
   end
   
-  
   # Fetch the Membre emails
   membres = Membre.all(:select => "email")
   membres.each do |membre|

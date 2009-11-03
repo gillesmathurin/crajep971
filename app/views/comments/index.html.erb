@@ -10,7 +10,7 @@
           <% for comment in @comments %>
              <div class="yui-g">
                  <p>
-                    <b>De :</b> <%= comment.author.login %> publié le : <%= I18n.l comment.created_at %>
+                    <b>De :</b> <%= comment.author.login if comment.author %> publié le : <%= I18n.l comment.created_at %>
                  </p>
                  <%= format_text(comment.body) %>
              </div>
