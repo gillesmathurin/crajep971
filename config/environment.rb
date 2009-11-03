@@ -53,3 +53,4 @@ Rails::Initializer.run do |config|
   config.i18n.default_locale = :fr
   require 'RedCloth'
 end
+ExceptionNotifier.exception_recipients = %w(gwadaman30@gmail.com gilles.math@me.com)

@@ -17,6 +17,11 @@
                         <pre><%= actu.comments.size %> commentaires</pre>
                         <%= link_to "Lire plus …", article_path(actu) %><br/><br/>                        
                     </p>
+                    <% if admin? %>
+                        <p>
+                            <%= link_to "Modifier", edit_article_path(actu), :class => "button_link2" %> | <%= link_to "Supprimer", article_path(actu), :method => :delete, :class => "button_link2" %>
+                        </p>
+                     <% end %>
                   <% end %>
                 <% else %>
                   <p>
@@ -41,5 +46,6 @@
     
     <%= render :partial => 'admin' %>
     <%= render :partial => "shared/gestion_newsletter" %>
+    <%= render :partial => "shared/gestion_cpte_rendu" %>
     <%= render :partial => "shared/logos" %>
 </div>

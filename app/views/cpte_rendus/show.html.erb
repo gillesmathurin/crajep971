@@ -1,2 +1,29 @@
-<h1>CpteRendus#show</h1>
-<p>Find me in app/views/cpte_rendus/show.html.erb</p>
+<div id="yui-main">
+    <div class="yui-b">
+        <div class="yui-g">
+            <h1 class="accroche">Compte rendu</h1>
+        </div>
+        
+        <div class="yui-g">
+            <p>
+                <%= @cpte_rendu.titre %>
+            </p>
+            
+            <p>
+                <%= format_text(@cpte_rendu.body) %>
+            </p>
+            
+            <p><%= link_to "Télécharger moi", @cpte_rendu.document.url(:original, false) %></p>
+        </div>
+        
+        <div class="yui-g">
+            <%= link_to "Retour", cpte_rendus_path(), :class => "button_link2" %>
+        </div>
+    </div>
+</div>
+
+<div class="yui-b sidebar">
+    <%= render :partial => "shared/login" %>
+    <%= render :partial => "shared/newsletter" %>
+    <%= render :partial => "shared/logos" %>
+</div>

@@ -2,6 +2,11 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  include MaintenanceMode
+  include ExceptionNotifiable
+  
+  before_filter :disabled?
+  
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   include AuthenticatedSystem
@@ -9,6 +14,8 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   
+  # local_addresses.clear
+    
   private
   
   def call_rake(task, options = {})
@@ -21,7 +28,7 @@ class ApplicationController < ActionController::Base
       end
     end
     
-    system "/usr/bin/rake #{task} #{args.join(' ')} --trace 2>&1 >> #{RAILS_ROOT}/log/rake.log &" # development
-    # system "usr/local/bin/rake #{task} #{args.join(' ')} --trace 2>&1 >> #{RAILS_ROOT}/log/rake.log &" # production
+    # system "/usr/bin/rake #{task} #{args.join(' ')} --trace 2>&1 >> #{RAILS_ROOT}/log/rake.log &" # development
+    system "usr/local/bin/rake #{task} #{args.join(' ')} --trace 2>&1 >> #{RAILS_ROOT}/log/rake.log &" # production
   end
 end

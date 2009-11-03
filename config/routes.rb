@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :home
   map.accueil '/accueil', :controller => 'home', :action => 'index'
   map.contacts '/contacts', :controller => 'home', :action => 'contacts'
+  map.errors '/errors', :controller => 'home', :action => 'exception_notifier'
   
   map.resources :nl_contents
 
@@ -28,7 +29,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :reseaux
   
-  map.resources :cpte_rendus
+  map.resources :cpte_rendus, :member => {:download => :get}
   
   map.resources :membres
   
@@ -45,6 +46,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session
   
   map.root :controller => 'home', :action => 'index'
+  # map.root "/public/system/maintenance.html"
 
   # The priority is based upon order of creation: first created -> highest priority.
 
