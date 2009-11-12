@@ -1,21 +1,21 @@
-if( !_urlBZE68A893E137F4B2B8388 ) {
-	var _urlBZE68A893E137F4B2B8388 = null;
+if( !_urlBZ75F561CD344942C392BA ) {
+	var _urlBZ75F561CD344942C392BA = null;
 	var scripts = document.getElementsByTagName("script");
 	for( var i=0;i<scripts.length;i++ ) {
 		var s = scripts[i];
 		if( s.src && s.src.match(/bzLoader\.js/) ) {
 			if (s.src.length>11) {
-				_urlBZE68A893E137F4B2B8388 = s.src.substring(0,s.src.length-11);
+				_urlBZ75F561CD344942C392BA = s.src.substring(0,s.src.length-11);
 			} else {
-				_urlBZE68A893E137F4B2B8388 = "./";
+				_urlBZ75F561CD344942C392BA = "./";
 			}
 		}
 	}
 }
-var _scriptsBZE68A893E137F4B2B8388 = new Array();
-_scriptsBZE68A893E137F4B2B8388[0] = 'swfobject.js';
-_scriptsBZE68A893E137F4B2B8388[1] = 'bz.js';
-for( var i=0;i<_scriptsBZE68A893E137F4B2B8388.length;i++ ) {
-	var urlC = _urlBZE68A893E137F4B2B8388+_scriptsBZE68A893E137F4B2B8388[i];
+var _scriptsBZ75F561CD344942C392BA = new Array();
+_scriptsBZ75F561CD344942C392BA[0] = 'swfobject.js';
+_scriptsBZ75F561CD344942C392BA[1] = 'bz.js';
+for( var i=0;i<_scriptsBZ75F561CD344942C392BA.length;i++ ) {
+	var urlC = _urlBZ75F561CD344942C392BA+_scriptsBZ75F561CD344942C392BA[i];
 	document.write('<script type="text/javascript" src="'+ urlC +'"><\/script>');
 }
