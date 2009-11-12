@@ -180,6 +180,13 @@ p.login {
 	font-weight: bold;
 }
 
+p.login.colored {
+	color: red;
+	background-color: #e0f2fe;
+	padding: 2px;
+	border: 1px solid navy;
+}
+
 div.yui-b.sidebar p {
 	text-align: center;
 	margin-bottom: 10px;
@@ -315,4 +322,16 @@ div#ft {
 	background-color: #027abb;
 	color: white;
 	text-align: center;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+div#ft a {
+	color: yellow;
+	text-decoration: none;
+}
+
+div#ft a:hover {
+	color: lime;
+	text-decoration: none;
 }
