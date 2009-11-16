@@ -2,11 +2,8 @@ class NewslettersController < ApplicationController
   uses_tiny_mce
     
   def deliver
-    newsletter = Newsletter.find(params[:id])
-    abonnes = Abonne.find(:all, :select => :email)
-    newsletter.send_later(:deliver)
-    # call_rake(:send_newsletter, :newsletter_id => params[:id])
-    flash[:notice] = "En cours d'envoi"
+    Delayed::Job.enqueue(NewsletterJob.new(params[:id]))
+    flash[:notice] = " Newsletter en cours d'envoi."
     redirect_to newsletters_url
   end
   

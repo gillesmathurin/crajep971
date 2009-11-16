@@ -1,5 +1,10 @@
 <div id="yui-main">
     <div class="yui-b">
+		<div class="yui-g">
+			<% if flash[:notice] %>
+				<p><%= flash[:notice] %></p>
+			<% end %>
+		</div>
         <div class="yui-g">
             <h1 class="accroche">Listing newsletters</h1>
 
