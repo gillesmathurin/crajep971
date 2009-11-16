@@ -1,0 +1,46 @@
+<div id="yui-main">
+	<div class="yui-b">
+		<div class="yui-g">
+			<h1 class="accroche">Liste des membres du CA du CRAJEP</h1>
+			
+			<table>
+			  <tr>
+			    <th>Nom</th>
+			    <th>Fonction</th>
+			    <th>Association</th>
+			    <th>Email</th>
+			    <th>Contact</th>
+			  </tr>
+
+			<% @boardmembers.each do |boardmember| %>
+			  <tr>
+			    <td><%=h boardmember.nom %></td>
+			    <td><%=h boardmember.fonction %></td>
+			    <td><%=h boardmember.association %></td>
+			    <td><%=h boardmember.email %></td>
+			    <td><%=h boardmember.contact %></td>
+			    <td><%= link_to 'Voir', boardmember %></td>
+			    <td><%= link_to 'Modifier', edit_boardmember_path(boardmember) %></td>
+			    <td><%= link_to 'Supprimer', boardmember, :confirm => 'En êtes vous sur ?', :method => :delete %></td>
+			  </tr>
+			<% end %>
+			</table>
+			<p>
+				<%= link_to 'New boardmember', new_boardmember_path %>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="yui-b sidebar">
+	<%= render :partial => "shared/login" %>
+    <%= render :partial => "shared/newsletter" %>
+    
+    <% if admin? %>
+		<%= link_to "Ajouter un membre au CA", new_boardmember_path(), :class => "button_link" %><br/><br/>
+    <% end %>
+    <%= render :partial => "shared/gestion_newsletter" %>
+    <%= render :partial => "shared/gestion_cpte_rendu" %>
+    <%= render :partial => "shared/logos" %>
+</div>
+

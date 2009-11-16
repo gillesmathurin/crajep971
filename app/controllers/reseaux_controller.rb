@@ -8,6 +8,7 @@ class ReseauxController < ApplicationController
       redirect_to :action => 'not_found'
     end
     @membres = Membre.all
+    @boardmembers = Boardmember.all
     
     respond_to do |format|
       format.html {  }

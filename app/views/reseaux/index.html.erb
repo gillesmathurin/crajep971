@@ -3,6 +3,27 @@
         <div class="yui-g">
             <h1 class="accroche">LE RESEAU CRAJEP 971</h1>
         </div>
+
+		<div class="yui-g">
+			<h3 class="green">Les membres du Conseil d'Administration</h3>
+			<table>
+				<tr>
+					<th>Fonction</th>
+					<th>Association</th>
+					<th>Nom</th>
+					<th>E-Mail</th>
+				</tr>
+				
+				<% @boardmembers.each do |boardmember| %>
+				  <tr>
+				    <td><%=h boardmember.fonction %></td>
+				    <td><%=h boardmember.association %></td>
+				    <td><%=h boardmember.nom %></td>
+				    <td><%=h boardmember.email %></td>
+				  </tr>
+				<% end %>
+			</table>
+		</div>
         
         <div class="yui-gc">
             

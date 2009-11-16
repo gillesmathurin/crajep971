@@ -1,0 +1,20 @@
+<div id="yui-main">
+	<div class="yui-b">
+		<div class="yui-g">
+			<h1 class="accroche">Ajouter un Membre de Conseil d'Administration</h1>
+
+			<% form_for(@boardmember) do |f| %>
+			  <%= f.error_messages %>
+
+				<%= render :partial => 'form', :locals => {:f => f} %>
+
+			  <p>
+			    <%= f.submit 'Enregistrer' %>
+			  </p>
+			<% end %>
+
+			<%= link_to 'Retour', boardmembers_path %>
+		</div>
+	</div>
+</div>
+
