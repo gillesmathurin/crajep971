@@ -1,4 +1,5 @@
 class BoardmembersController < ApplicationController
+  before_filter :admin_login_required, :only => [:new, :edit, :destroy]
   # GET /boardmembers
   # GET /boardmembers.xml
   def index
