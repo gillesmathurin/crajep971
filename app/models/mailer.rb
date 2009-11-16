@@ -3,7 +3,7 @@ class Mailer < ActionMailer::Base
   # Envoi les données du formulaire de demande d'adhésion
   def candidature(candidature)
     subject "Demande d'adhésion"
-    from "postmaster@crajep-temp.com"
+    from "postmaster@crajep971.fr"
     recipients "crajep971@orange.fr"
     cc ['agouti4@wanadoo.fr', 'gilbert.sacile@orange.fr', 'bruno.benony@gmail.com',
        'gillesmath@me.com' ]
@@ -14,7 +14,7 @@ class Mailer < ActionMailer::Base
   
   def newsletter(abonnes, newsletter)
     subject "CRAJEP Lettre d'information n°#{newsletter.id}"
-    from "postmaster@crajep-temp.com"
+    from "postmaster@crajep971.fr"
     recipients(abonnes.last.email)
     cc(abonnes.map(&:email))
     sent_on Time.now
@@ -27,7 +27,7 @@ class Mailer < ActionMailer::Base
   def confirm_newsletter_sub(abonne)
     @subject = "Confirmation de votre abonnement à notre newsletter"
     @body = { "abonne" => abonne }
-    from "postmaster@guadeloupe-asso.fr"
+    from "postmaster@crajep971.fr"
     @recipients = abonne.email
     @sent_on = Time.now
     @header = {}
@@ -36,7 +36,7 @@ class Mailer < ActionMailer::Base
   
   def cpterendu_notification(cpte_rendu, emails)
     subject "Nouveau Compte rendu de réunion"
-    from "postmaster@crajep_temp.com"
+    from "postmaster@crajep971.fr"
     recipients emails 
     body :cpte_rendu => cpte_rendu
     sent_on Time.now
