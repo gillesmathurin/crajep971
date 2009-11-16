@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091116022040) do
+ActiveRecord::Schema.define(:version => 20091116133652) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
@@ -99,6 +99,19 @@ ActiveRecord::Schema.define(:version => 20091116022040) do
     t.string   "document_content_type"
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
+  end
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "evenements", :force => true do |t|
