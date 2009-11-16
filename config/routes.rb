@@ -1,6 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :boardmembers
-
   
   map.resources :home
   map.accueil '/accueil', :controller => 'home', :action => 'index'
