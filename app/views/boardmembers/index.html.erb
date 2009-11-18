@@ -25,9 +25,7 @@
 			  </tr>
 			<% end %>
 			</table>
-			<p>
-				<%= link_to 'New boardmember', new_boardmember_path %>
-			</p>
+
 		</div>
 	</div>
 </div>
@@ -37,7 +35,7 @@
     <%= render :partial => "shared/newsletter" %>
     
     <% if admin? %>
-		<%= link_to "Ajouter un membre au CA", new_boardmember_path(), :class => "button_link" %><br/><br/>
+		<%= link_to "Ajouter un membre CA", new_boardmember_path(), :class => "button_link" %><br/><br/>
     <% end %>
     <%= render :partial => "shared/gestion_newsletter" %>
     <%= render :partial => "shared/gestion_cpte_rendu" %>

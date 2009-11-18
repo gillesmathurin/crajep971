@@ -100,8 +100,10 @@
     <%= render :partial => "shared/newsletter" %>
     
     <% if admin? %>
-        <%= link_to "Ajouter un membre", new_membre_path(), :class => "button_link" %><br/><br/>
+        <%= link_to "Ajouter un membre au CRAJEP", new_membre_path(), :class => "button_link" %><br/><br/>
+		<%= link_to "Ajouter un membre CA", new_boardmember_path(), :class => "button_link" %><br/><br/>
     <% end %>
+	
     <%= render :partial => "shared/gestion_newsletter" %>
     <%= render :partial => "shared/gestion_cpte_rendu" %>
     <%= render :partial => "shared/logos" %>
