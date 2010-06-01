@@ -1,0 +1,38 @@
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby extconf.rb
+checking for iconv.h in /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include,/opt/local/include,/usr/local/include,/usr/include... yes
+checking for libxml/parser.h in /opt/local/include/,/opt/local/include/libxml2,/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2,/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include,/usr/local/include/libxml2,/usr/include/libxml2... yes
+checking for libxslt/xslt.h in /opt/local/include/,/opt/local/include/libxml2,/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2,/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include,/usr/local/include/libxml2,/usr/include/libxml2... yes
+checking for libexslt/exslt.h in /opt/local/include/,/opt/local/include/libxml2,/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2,/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include,/usr/local/include/libxml2,/usr/include/libxml2... yes
+checking for xmlParseDoc() in -lxml2... no
+libxml2 is missing.  try 'port install libxml2' or 'yum install libxml2'
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of
+necessary libraries and/or headers.  Check the mkmf.log file for more
+details.  You may need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby
+	--with-xml2-dir
+	--without-xml2-dir
+	--with-xml2-include
+	--without-xml2-include=${xml2-dir}/include
+	--with-xml2-lib
+	--without-xml2-lib=${xml2-dir}/lib
+	--with-xslt-dir
+	--without-xslt-dir
+	--with-xslt-include
+	--without-xslt-include=${xslt-dir}/include
+	--with-xslt-lib
+	--without-xslt-lib=${xslt-dir}/lib
+	--with-xml2lib
+	--without-xml2lib

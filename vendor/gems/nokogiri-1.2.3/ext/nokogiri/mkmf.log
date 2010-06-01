@@ -1,0 +1,240 @@
+find_header: checking for iconv.h in /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include,/opt/local/include,/usr/local/include,/usr/include... -------------------- yes
+
+"gcc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <iconv.h>
+/* end */
+
+--------------------
+
+find_header: checking for libxml/parser.h in /opt/local/include/,/opt/local/include/libxml2,/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2,/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include,/usr/local/include/libxml2,/usr/include/libxml2... -------------------- yes
+
+"gcc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <libxml/parser.h>
+/* end */
+
+--------------------
+
+find_header: checking for libxslt/xslt.h in /opt/local/include/,/opt/local/include/libxml2,/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2,/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include,/usr/local/include/libxml2,/usr/include/libxml2... -------------------- yes
+
+"gcc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <libxslt/xslt.h>
+/* end */
+
+--------------------
+
+find_header: checking for libexslt/exslt.h in /opt/local/include/,/opt/local/include/libxml2,/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2,/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include,/usr/local/include/libxml2,/usr/include/libxml2... -------------------- yes
+
+"gcc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <libexslt/exslt.h>
+/* end */
+
+--------------------
+
+find_library: checking for xmlParseDoc() in -lxml2... -------------------- no
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/opt/local/lib -L. -arch i386      -lruby -lxml2  -lpthread -ldl  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘xmlParseDoc’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/opt/local/lib -L. -arch i386      -lruby -lxml2  -lpthread -ldl  "
+conftest.c: In function ‘t’:
+conftest.c:3: warning: implicit declaration of function ‘xmlParseDoc’
+ld: warning: in /opt/local/lib/libxml2.dylib, file was built for unsupported file format which is not the architecture being linked (i386)
+Undefined symbols:
+  "_xmlParseDoc", referenced from:
+      _t in ccaKzg5I.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlParseDoc(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/opt/local/lib -L. -arch i386      -lruby -lxml2  -lpthread -ldl  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘xmlParseDoc’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/opt/local/lib -L. -arch i386      -lruby -lxml2  -lpthread -ldl  "
+conftest.c: In function ‘t’:
+conftest.c:3: warning: implicit declaration of function ‘xmlParseDoc’
+ld: warning: in /opt/local/lib/libxml2.dylib, file was built for unsupported file format which is not the architecture being linked (i386)
+Undefined symbols:
+  "_xmlParseDoc", referenced from:
+      _t in ccotv1no.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlParseDoc(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/opt/local/lib -L. -arch i386      -lruby -lxml2  -lpthread -ldl  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘xmlParseDoc’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/opt/local/lib -L. -arch i386      -lruby -lxml2  -lpthread -ldl  "
+conftest.c: In function ‘t’:
+conftest.c:3: warning: implicit declaration of function ‘xmlParseDoc’
+ld: warning: in /opt/local/lib/libxml2.dylib, file was built for unsupported file format which is not the architecture being linked (i386)
+Undefined symbols:
+  "_xmlParseDoc", referenced from:
+      _t in ccWw3MO8.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlParseDoc(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/opt/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L. -arch i386      -lruby -lxml2  -lpthread -ldl  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘xmlParseDoc’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/opt/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L. -arch i386      -lruby -lxml2  -lpthread -ldl  "
+conftest.c: In function ‘t’:
+conftest.c:3: warning: implicit declaration of function ‘xmlParseDoc’
+ld: warning: in /opt/local/lib/libxml2.dylib, file was built for unsupported file format which is not the architecture being linked (i386)
+Undefined symbols:
+  "_xmlParseDoc", referenced from:
+      _t in ccwaXTiH.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlParseDoc(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/opt/local/lib -L. -arch i386      -lruby -lxml2  -lpthread -ldl  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘xmlParseDoc’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/opt/local/lib -L. -arch i386      -lruby -lxml2  -lpthread -ldl  "
+conftest.c: In function ‘t’:
+conftest.c:3: warning: implicit declaration of function ‘xmlParseDoc’
+ld: warning: in /opt/local/lib/libxml2.dylib, file was built for unsupported file format which is not the architecture being linked (i386)
+Undefined symbols:
+  "_xmlParseDoc", referenced from:
+      _t in ccQZtaFu.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlParseDoc(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/opt/local/lib -L/usr/local/lib -L. -arch i386      -lruby -lxml2  -lpthread -ldl  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘xmlParseDoc’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/opt/local/lib -L/usr/local/lib -L. -arch i386      -lruby -lxml2  -lpthread -ldl  "
+conftest.c: In function ‘t’:
+conftest.c:3: warning: implicit declaration of function ‘xmlParseDoc’
+ld: warning: in /opt/local/lib/libxml2.dylib, file was built for unsupported file format which is not the architecture being linked (i386)
+Undefined symbols:
+  "_xmlParseDoc", referenced from:
+      _t in ccf3zNzC.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlParseDoc(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/opt/local/lib -L/usr/lib -L. -arch i386      -lruby -lxml2  -lpthread -ldl  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘xmlParseDoc’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I. -I/opt/local/include/ -I/opt/local/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch i386 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/opt/local/lib -L/usr/lib -L. -arch i386      -lruby -lxml2  -lpthread -ldl  "
+conftest.c: In function ‘t’:
+conftest.c:3: warning: implicit declaration of function ‘xmlParseDoc’
+ld: warning: in /opt/local/lib/libxml2.dylib, file was built for unsupported file format which is not the architecture being linked (i386)
+Undefined symbols:
+  "_xmlParseDoc", referenced from:
+      _t in ccOaY2jT.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlParseDoc(); return 0; }
+/* end */
+
+--------------------
+

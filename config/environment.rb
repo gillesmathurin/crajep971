@@ -13,7 +13,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
   config.gem 'rubyist-aasm', :lib => 'aasm', :version => '>=2.0.5'
   config.gem 'faker', :lib => false, :version => '>=0.3.1'
-  config.gem 'RedCloth', :lib => false, :version => '>=4.1.9'
+  config.gem 'RedCloth', :lib => false, :version => '>=4.2.2'
   
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -47,6 +47,6 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   config.i18n.default_locale = :fr
-  require 'RedCloth'
 end
+require 'RedCloth'
 ExceptionNotifier.exception_recipients = "gwadaman30@gmail.com"
