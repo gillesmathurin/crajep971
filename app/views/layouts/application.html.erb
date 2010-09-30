@@ -33,6 +33,9 @@
                     <li><%= link_to "RESEAU", reseaux_index_path %></li>
                     <li><%= link_to "CONTACTS", contacts_path %></li>
                     <li><%= link_to "LIENS", liens_path %></li>
+										<% if admin? %>
+										<li><%= link_to "UTILISATEURS", users_path() %></li>
+										<% end %>
                 </ul>
             </div>
         </div>

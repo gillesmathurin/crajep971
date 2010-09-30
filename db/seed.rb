@@ -9,8 +9,7 @@ Lien.delete_all
 # Création des catégories et des actions
 
 # Création du user beta
-User.create(:name => "beta", :login => "beta", :email => Faker::Internet.email, :password => "betabeta",
- :password_confirmation => "betabeta", :categorie => "0", :state => 'active')
+User.create(:name => "beta", :login => "beta", :email => Faker::Internet.email, :password => "betabeta", :password_confirmation => "betabeta", :categorie => "0", :state => 'active')
  
  # Création de 4 articles et de 2 commentaires par articles
 
