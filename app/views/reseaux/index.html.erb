@@ -52,6 +52,9 @@
                         <strong>Objet :</strong> <%= truncate(membre.description, :length => 200) %><br/>
                         <% end %>
                         <%= link_to "Plus d'infos", membre_path(membre) %>
+                        <% if admin? %>
+                          <%= link_to "Supprimer", membre_path(membre), :method => :delete, :class => "button_link" %>
+                        <% end %>
                     </p>
                 <% end %>
             </div>
@@ -100,7 +103,7 @@
     <%= render :partial => "shared/newsletter" %>
     
     <% if admin? %>
-        <%= link_to "Ajouter un membre au CRAJEP", new_membre_path(), :class => "button_link" %><br/><br/>
+        <%= link_to "Ajouter Asso Membre", new_membre_path(), :class => "button_link" %><br/><br/>
 		<%= link_to "Ajouter un membre CA", new_boardmember_path(), :class => "button_link" %><br/><br/>
     <% end %>
 	
